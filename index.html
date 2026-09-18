@@ -386,6 +386,23 @@
   .step-text{
     max-width:78ch;
   }
+  .step-link-callout{
+    display:inline-block;
+    margin-bottom:14px;
+    padding:12px 18px;
+    background:var(--accent-dim);
+    border:1px solid var(--accent);
+    border-radius:8px;
+    color:var(--accent-deep);
+    font-weight:600;
+    font-size:15px;
+    text-decoration:none;
+    word-break:break-word;
+  }
+  .step-link-callout:hover{
+    background:var(--accent);
+    color:#fff;
+  }
   .step-text strong{
     display:block;
     font-size:19px;
@@ -612,6 +629,14 @@
           </summary>
           <div class="stage-body">
           <ul class="step-list">
+            <li id="step-kicad-instalar-la-aplicacion">
+              <div class="step-thumb has-img"><a href="images/kicad-descargar-app.png" target="_blank"><img src="images/kicad-descargar-app.png" alt="Página oficial de descarga de KiCad con opciones para Windows, macOS, Linux y Docker"></a></div>
+              <div class="step-text">
+                <strong>Instalar la aplicación</strong>
+                <a class="step-link-callout" href="https://www.kicad.org/download/" target="_blank">https://www.kicad.org/download/</a>
+                <span>Ese link lleva a la página oficial de descarga de KiCad. Ahí hay que instalarlo según el sistema operativo de cada quien (Windows, macOS, Linux o Docker).</span>
+              </div>
+            </li>
             <li id="step-kicad-instalacion-de-la-libreria-fablab">
               <div class="step-thumb has-img"><a href="images/kicad-fablab.png" target="_blank"><img src="images/kicad-fablab.png" alt="Administrador de complementos y contenidos con la librería FabLab"></a></div>
               <div class="step-text">
