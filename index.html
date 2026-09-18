@@ -403,6 +403,22 @@
     background:var(--accent);
     color:#fff;
   }
+  kbd.key{
+    display:inline-block;
+    min-width:20px;
+    padding:2px 7px;
+    margin:0 1px;
+    background:var(--surface);
+    border:1px solid var(--accent);
+    border-bottom:2px solid var(--accent);
+    border-radius:5px;
+    color:var(--accent-deep);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    text-align:center;
+    line-height:1.6;
+  }
   .step-text strong{
     display:block;
     font-size:19px;
@@ -648,7 +664,7 @@
               <div class="step-thumb has-img"><a href="images/kicad-abrir-administrador-complementos.png" target="_blank"><img src="images/kicad-abrir-administrador-complementos.png" alt="Menú Herramientas de KiCad con la opción Administrador de complementos y contenido resaltada"></a></div>
               <div class="step-text">
                 <strong>Abrir el Administrador de complementos y contenido</strong>
-                <span>Dentro de la aplicación, en la pestaña "Herramientas" seleccionamos "Administrador de complementos y contenido" (Ctrl+M). Desde ahí instalamos la librería FabLab, un paquete de símbolos y huellas pensado para fabricación digital que agrupa los componentes que usamos en el curso (conectores, botones, LEDs, resistencias, etc.) ya ajustados a las herramientas del laboratorio, para que el diseño sea compatible desde el esquemático hasta el corte de la placa.</span>
+                <span>Dentro de la aplicación, en la pestaña "Herramientas" seleccionamos "Administrador de complementos y contenido" (<kbd class="key">Ctrl</kbd>+<kbd class="key">M</kbd>). Desde ahí instalamos la librería FabLab, un paquete de símbolos y huellas pensado para fabricación digital que agrupa los componentes que usamos en el curso (conectores, botones, LEDs, resistencias, etc.) ya ajustados a las herramientas del laboratorio, para que el diseño sea compatible desde el esquemático hasta el corte de la placa.</span>
               </div>
             </li>
             <li id="step-kicad-buscar-e-instalar-la-libreria-fablab">
@@ -679,11 +695,18 @@
                 <span>Se abrió la ventana para guardar el proyecto. En "Nombre de archivo" escribimos "Hola mundo" (dejamos activada la opción de crear una nueva carpeta para el proyecto) y le dimos en "Guardar".</span>
               </div>
             </li>
-            <li id="step-kicad-abrir-el-esquematico-y-agregar-componentes">
-              <div class="step-thumb has-img"><a href="images/esquematico.png" target="_blank"><img src="images/esquematico.png" alt="Esquemático del circuito en KiCad con conectores, botones, resistencias y LEDs"></a></div>
+            <li id="step-kicad-abrir-el-esquematico">
+              <div class="step-thumb has-img"><a href="images/esquematico.png" target="_blank"><img src="images/esquematico.png" alt="Panel de Archivos de proyecto con Hola mundo.kicad_sch seleccionado para abrir el esquemático"></a></div>
               <div class="step-text">
-                <strong>Abrir el esquemático y agregar componentes</strong>
-                <span>Abrimos el editor de esquemáticos y, con el atajo (A), agregamos el conector J1 de alimentación (V3.3 / GND), el conector J2 de salidas (S1–S4), los cuatro botones (SW1–SW4) con sus resistencias asociadas (1kΩ y 220Ω) y sus LEDs indicadores (D1 y D3 azules, D2 y D4 rojos), verificando que cada componente tuviera su huella (footprint) asignada correctamente.</span>
+                <strong>Abrir el esquemático</strong>
+                <span>Ya guardado el proyecto, del lado izquierdo, en el panel de "Archivos de proyecto", buscamos el archivo "Hola mundo.kicad_sch" y le dimos doble clic para abrir el editor de esquemáticos.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-un-simbolo-y-buscar-la-resistencia">
+              <div class="step-thumb has-img"><a href="images/kicad-agregar-simbolo-1206.png" target="_blank"><img src="images/kicad-agregar-simbolo-1206.png" alt="Ventana Elegir símbolo con búsqueda '1206', mostrando el símbolo y la huella FabLab de la resistencia R_1206"></a></div>
+              <div class="step-text">
+                <strong>Agregar un símbolo y buscar la resistencia</strong>
+                <span>Con el esquemático ya abierto, del lado derecho le dimos en "Añadir símbolo" (también se puede abrir presionando la tecla <kbd class="key">A</kbd>). Se abrió la ventana "Elegir símbolo" y ahí escribimos "1206" para buscar una resistencia de ese tamaño. A la derecha se mostraron dos vistas previas: arriba el símbolo, que es como se representa el componente dentro del esquemático, y abajo la huella (footprint), que es el patrón de pads que va a quedar impreso en la placa física para soldar ese componente; es importante revisarla porque debe coincidir en tamaño y forma con el componente real que se va a soldar. Tanto el símbolo como la huella de esta resistencia vienen de la librería FabLab que instalamos previamente.</span>
               </div>
             </li>
             <li id="step-kicad-verificacion-con-el-control-de-reglas-electricas">
