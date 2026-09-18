@@ -429,6 +429,23 @@
     font-size:15.5px;
     color:var(--ink-dim);
     line-height:1.6;
+    display:block;
+  }
+  .step-text span + span{
+    margin-top:10px;
+  }
+  .step-group-title{
+    font-size:15px;
+    font-weight:700;
+    color:var(--accent-deep);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0 0 20px;
+    padding-left:14px;
+    border-left:3px solid var(--accent);
+  }
+  .step-group-title:not(:first-child){
+    margin-top:36px;
   }
   .step-list li.pair{
     display:flex;
@@ -644,6 +661,7 @@
             <span class="stage-chevron">›</span>
           </summary>
           <div class="stage-body">
+          <h5 class="step-group-title">Instalación de KiCad</h5>
           <ul class="step-list">
             <li id="step-kicad-instalar-la-aplicacion">
               <div class="step-thumb has-img"><a href="images/kicad-descargar-app.png" target="_blank"><img src="images/kicad-descargar-app.png" alt="Página oficial de descarga de KiCad con opciones para Windows, macOS, Linux y Docker"></a></div>
@@ -660,6 +678,10 @@
                 <span>Ya instalado, abrimos KiCad y se mostró la interfaz principal del programa: del lado izquierdo el panel de "Archivos de proyecto" y del lado derecho los accesos directos a las distintas herramientas (Editor de esquemas, Editor de símbolos, Editor de placas, Editor de huellas, Visor Gerber, Conversor de imágenes, Herramientas de cálculo, Editor de hoja de trabajo y Administrador de complementos y contenido).</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title">Instalación de la librería FabLab</h5>
+          <ul class="step-list">
             <li id="step-kicad-abrir-el-administrador-de-complementos-y-contenido">
               <div class="step-thumb has-img"><a href="images/kicad-abrir-administrador-complementos.png" target="_blank"><img src="images/kicad-abrir-administrador-complementos.png" alt="Menú Herramientas de KiCad con la opción Administrador de complementos y contenido resaltada"></a></div>
               <div class="step-text">
@@ -681,6 +703,10 @@
                 <span>Se abrió una ventana con el progreso de la descarga y, al terminar, mostró en Detalles que estaba descargando el paquete desde gitlab.fabcloud.org, que instaló el paquete "KiCad FabLib" y que todas las operaciones se completaron satisfactoriamente.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title">Creación del proyecto</h5>
+          <ul class="step-list">
             <li id="step-kicad-crear-un-nuevo-proyecto">
               <div class="step-thumb has-img"><a href="images/kicad-nuevo-proyecto.png" target="_blank"><img src="images/kicad-nuevo-proyecto.png" alt="Menú Archivo con Nuevo proyecto seleccionado y el Selector de plantillas de proyecto con la plantilla default de KiCad"></a></div>
               <div class="step-text">
@@ -695,6 +721,10 @@
                 <span>Se abrió la ventana para guardar el proyecto. En "Nombre de archivo" escribimos "Hola mundo" (dejamos activada la opción de crear una nueva carpeta para el proyecto) y le dimos en "Guardar".</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title">Agregar componentes</h5>
+          <ul class="step-list">
             <li id="step-kicad-abrir-el-esquematico">
               <div class="step-thumb has-img"><a href="images/esquematico.png" target="_blank"><img src="images/esquematico.png" alt="Panel de Archivos de proyecto con Hola mundo.kicad_sch seleccionado para abrir el esquemático"></a></div>
               <div class="step-text">
@@ -706,9 +736,28 @@
               <div class="step-thumb has-img"><a href="images/kicad-agregar-simbolo-1206.png" target="_blank"><img src="images/kicad-agregar-simbolo-1206.png" alt="Ventana Elegir símbolo con búsqueda '1206', mostrando el símbolo y la huella FabLab de la resistencia R_1206"></a></div>
               <div class="step-text">
                 <strong>Agregar un símbolo y buscar la resistencia</strong>
-                <span>Con el esquemático ya abierto, del lado derecho le dimos en "Añadir símbolo" (también se puede abrir presionando la tecla <kbd class="key">A</kbd>). Se abrió la ventana "Elegir símbolo" y ahí escribimos "1206" para buscar una resistencia de ese tamaño. A la derecha se mostraron dos vistas previas: arriba el símbolo, que es como se representa el componente dentro del esquemático, y abajo la huella (footprint), que es el patrón de pads que va a quedar impreso en la placa física para soldar ese componente; es importante revisarla porque debe coincidir en tamaño y forma con el componente real que se va a soldar. Tanto el símbolo como la huella de esta resistencia vienen de la librería FabLab que instalamos previamente.</span>
+                <span>Con el esquemático ya abierto, del lado derecho le dimos en "Añadir símbolo" (también se puede abrir presionando la tecla <kbd class="key">A</kbd>). Se abrió la ventana "Elegir símbolo" y ahí escribimos "1206" para buscar una resistencia de ese tamaño. A la derecha se mostraron dos vistas previas: arriba el símbolo, que es como se representa el componente dentro del esquemático, y abajo la huella (footprint), que es el patrón de pads que va a quedar impreso en la placa física para soldar ese componente; es importante revisarla porque debe coincidir en tamaño y forma con el componente real que se va a soldar. Tanto el símbolo como la huella de esta resistencia vienen de la librería FabLab que instalamos previamente. Le dimos en "Aceptar" y la colocamos en el esquemático.</span>
               </div>
             </li>
+            <li id="step-kicad-agregar-el-led-y-el-switch">
+              <div class="step-thumb has-img"><a href="images/kicad-agregar-led-switch.png" target="_blank"><img src="images/kicad-agregar-led-switch.png" alt="Ventana Elegir símbolo mostrando LED_1206 y, junto a ella, otra ventana con Switch_Tactile_Omron"></a></div>
+              <div class="step-text">
+                <strong>Agregar el LED y el switch</strong>
+                <span>De la misma manera, presionando <kbd class="key">A</kbd> (o dándole al botón "Añadir símbolo"), buscamos otra vez "1206" y esta vez elegimos "LED_1206", le dimos en "Aceptar" y lo colocamos en el esquemático.</span>
+                <span>Después, otra vez con <kbd class="key">A</kbd>, buscamos "switch_tactile" y elegimos "Switch_Tactile_Omron" para agregar el botón. Le dimos en "Aceptar" y lo colocamos en el esquemático, junto al LED.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-los-simbolos-de-alimentacion">
+              <div class="step-thumb has-img"><a href="images/kicad-agregar-pwr-gnd.png" target="_blank"><img src="images/kicad-agregar-pwr-gnd.png" alt="Ventana Elegir símbolo de alimentación mostrando PWR_3V3 y, junto a ella, otra ventana con GND"></a></div>
+              <div class="step-text">
+                <strong>Agregar los símbolos de alimentación</strong>
+                <span>Estos símbolos no se encuentran presionando <kbd class="key">A</kbd>: están debajo de "Añadir símbolo", en "Colocar símbolos de alimentación", que también se puede abrir con la tecla <kbd class="key">P</kbd>. Ahí buscamos "pwr" y elegimos "PWR_3V3" para agregar la alimentación, le dimos en "Aceptar" y lo colocamos en el esquemático.</span>
+                <span>De la misma manera, con <kbd class="key">P</kbd>, buscamos "gnd" y elegimos "GND". A ninguno de los dos símbolos le aparece huella asignada, pero no importa porque son solo etiquetas de alimentación (no son componentes físicos que se vayan a soldar). Le dimos en "Aceptar" y lo colocamos en el esquemático.</span>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="step-list">
             <li id="step-kicad-verificacion-con-el-control-de-reglas-electricas">
               <div class="step-thumb has-img"><a href="images/kicad-erc.png" target="_blank"><img src="images/kicad-erc.png" alt="Ventana del Control de Reglas Eléctricas (ERC) en KiCad"></a></div>
               <div class="step-text">
