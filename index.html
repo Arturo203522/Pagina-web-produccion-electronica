@@ -284,20 +284,23 @@
     background:var(--surface);
     border:1px solid var(--border);
     border-radius:14px;
-    padding:24px 26px;
     margin-bottom:20px;
     box-shadow:0 1px 2px rgba(26,69,115,0.06);
+    overflow:hidden;
   }
-  .stage-head{
+  .stage-summary{
+    list-style:none;
+    cursor:pointer;
     display:flex;
     align-items:center;
-    gap:14px;
-    margin-bottom:18px;
+    gap:18px;
+    padding:28px 30px;
   }
+  .stage-summary::-webkit-details-marker{display:none;}
   .stage-intro{
     color:var(--ink-dim);
     font-size:14.5px;
-    margin:-4px 0 20px;
+    margin:0 0 20px;
     max-width:64ch;
   }
   .stage-intro a{
@@ -306,72 +309,32 @@
   }
   .stage-num{
     flex:none;
-    width:40px;height:40px;
+    width:48px;height:48px;
     border-radius:50%;
     background:var(--accent);
     color:var(--on-accent);
     font-weight:700;
-    font-size:16px;
+    font-size:19px;
     display:flex;align-items:center;justify-content:center;
   }
-  .stage-head h4{
-    font-size:22px;
+  .stage-summary h4{
+    font-size:30px;
     font-weight:700;
     margin:0;
+    flex:1;
   }
-  .stage-layout{
-    display:grid;
-    grid-template-columns:240px 1fr;
-    gap:40px;
-    align-items:start;
+  .stage-chevron{
+    flex:none;
+    font-size:24px;
+    color:var(--accent);
+    transform:rotate(90deg);
+    transition:transform .18s ease;
   }
-  .stage-index{
-    position:-webkit-sticky;
-    position:sticky;
-    top:100px;
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-    align-self:start;
-    max-height:calc(100vh - 120px);
-    overflow-y:auto;
-  }
-  .stage-index a{
-    font-size:15px;
-    font-weight:500;
-    line-height:1.4;
-    color:var(--ink-dim);
-    text-decoration:none;
-    padding:8px 12px;
-    border-left:2px solid transparent;
-  }
-  .stage-index a:hover{
-    color:var(--accent-deep);
-    border-left-color:var(--accent);
-    background:var(--accent-dim);
-    border-radius:0 8px 8px 0;
-  }
-  @media (max-width: 900px){
-    .stage-layout{grid-template-columns:1fr;}
-    .stage-index{
-      position:static;
-      flex-direction:row;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-bottom:22px;
-      padding-bottom:16px;
-      border-bottom:1px solid var(--border);
-      max-height:none;
-      overflow:visible;
-    }
-    .stage-index a{
-      font-size:13.5px;
-      border:1px solid var(--border);
-      border-left:1px solid var(--border);
-      border-radius:20px;
-      padding:6px 14px;
-    }
-    .stage-index a:hover{border-color:var(--accent);}
+  .stage[open] .stage-chevron{transform:rotate(-90deg);}
+  .stage-body{
+    padding:0 30px 30px;
+    border-top:1px solid var(--border);
+    padding-top:26px;
   }
   .step-list{
     list-style:none;
@@ -641,21 +604,13 @@
           <p>Nuestro primer proyecto del semestre: una placa con botones y LEDs indicadores, diseñada en KiCad y fabricada en la MonoFab SRM-20.</p>
         </div>
 
-        <div class="stage">
-          <div class="stage-head">
+        <details class="stage">
+          <summary class="stage-summary">
             <span class="stage-num">1</span>
             <h4>Proceso en KiCad</h4>
-          </div>
-          <div class="stage-layout">
-          <nav class="stage-index">
-            <a href="#step-kicad-instalacion-de-la-libreria-fablab">Instalación de la librería FabLab</a>
-            <a href="#step-kicad-abrir-el-esquematico-y-agregar-componentes">Abrir el esquemático y agregar componentes</a>
-            <a href="#step-kicad-verificacion-con-el-control-de-reglas-electricas">Verificación con el Control de Reglas Eléctricas</a>
-            <a href="#step-kicad-paso-al-editor-de-placas">Paso al editor de placas</a>
-            <a href="#step-kicad-enrutado-de-pistas-y-diseno-de-trazos">Enrutado de pistas y diseño de trazos</a>
-            <a href="#step-kicad-marcado-de-orificios-y-etiquetas">Marcado de orificios y etiquetas</a>
-            <a href="#step-kicad-exportacion-de-archivos-gerber">Exportación de archivos Gerber</a>
-          </nav>
+            <span class="stage-chevron">›</span>
+          </summary>
+          <div class="stage-body">
           <ul class="step-list">
             <li id="step-kicad-instalacion-de-la-libreria-fablab">
               <div class="step-thumb has-img"><a href="images/kicad-fablab.png" target="_blank"><img src="images/kicad-fablab.png" alt="Administrador de complementos y contenidos con la librería FabLab"></a></div>
@@ -707,34 +662,17 @@
               </div>
             </li>
           </ul>
-        </div>
-        </div>
+          </div>
+        </details>
 
-        <div class="stage" style="margin-bottom:0;">
-          <div class="stage-head">
+        <details class="stage">
+          <summary class="stage-summary">
             <span class="stage-num">2</span>
             <h4>Proceso en Mods</h4>
-          </div>
+            <span class="stage-chevron">›</span>
+          </summary>
+          <div class="stage-body">
           <p class="stage-intro">Mods (<a href="https://modsproject.org/" target="_blank">modsproject.org</a>) es una herramienta web modular que convierte archivos de diseño en códigos de control para máquinas de fabricación digital, como fresadoras CNC.</p>
-          <div class="stage-layout">
-          <nav class="stage-index">
-            <a href="#step-mods-preparacion-de-archivos-en-inkscape">Preparación de archivos en Inkscape</a>
-            <a href="#step-mods-buscar-y-seleccionar-el-programa">Buscar y seleccionar el programa</a>
-            <a href="#step-mods-cargar-el-archivo-del-contorno">Cargar el archivo del Contorno</a>
-            <a href="#step-mods-ajustar-el-corte-y-el-diametro-de-herramienta">Ajustar el corte y el diámetro de herramienta</a>
-            <a href="#step-mods-vista-previa-del-corte">Vista previa del corte</a>
-            <a href="#step-mods-configurar-el-origen-y-la-velocidad">Configurar el origen y la velocidad</a>
-            <a href="#step-mods-guardar-el-archivo">Guardar el archivo</a>
-            <a href="#step-mods-cargar-el-archivo-de-pistas-e-invertir">Cargar el archivo de Pistas e invertir</a>
-            <a href="#step-mods-ajustar-unidades-y-ancho-de-pista">Ajustar unidades y ancho de pista</a>
-            <a href="#step-mods-configurar-el-offset-y-calcular">Configurar el offset y calcular</a>
-            <a href="#step-mods-configurar-el-origen">Configurar el origen</a>
-            <a href="#step-mods-guardar-el-archivo-de-pistas">Guardar el archivo de Pistas</a>
-            <a href="#step-mods-cargar-el-archivo-de-cortes">Cargar el archivo de Cortes</a>
-            <a href="#step-mods-ajustar-unidades-y-calcular">Ajustar unidades y calcular</a>
-            <a href="#step-mods-configurar-origen-y-velocidad">Configurar origen y velocidad</a>
-            <a href="#step-mods-guardar-el-archivo-de-cortes">Guardar el archivo de Cortes</a>
-          </nav>
           <ul class="step-list">
             <li id="step-mods-preparacion-de-archivos-en-inkscape">
               <div class="step-thumb has-img"><a href="images/mods-inkscape.png" target="_blank"><img src="images/mods-inkscape.png" alt="Archivos ajustados en Inkscape: Contorno, Pistas y Cortes"></a></div>
@@ -852,8 +790,8 @@
               </div>
             </li>
           </ul>
-        </div>
-        </div>
+          </div>
+        </details>
       </div>
     </details>
 
