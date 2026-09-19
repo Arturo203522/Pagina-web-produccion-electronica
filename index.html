@@ -737,6 +737,7 @@
               <div class="step-text">
                 <strong>Agregar un símbolo y buscar la resistencia</strong>
                 <span>Con el esquemático ya abierto, del lado derecho le dimos en "Añadir símbolo" (también se puede abrir presionando la tecla <kbd class="key">A</kbd>). Se abrió la ventana "Elegir símbolo" y ahí escribimos "1206" para buscar una resistencia de ese tamaño. A la derecha se mostraron dos vistas previas: arriba el símbolo, que es como se representa el componente dentro del esquemático, y abajo la huella (footprint), que es el patrón de pads que va a quedar impreso en la placa física para soldar ese componente; es importante revisarla porque debe coincidir en tamaño y forma con el componente real que se va a soldar. Tanto el símbolo como la huella de esta resistencia vienen de la librería FabLab que instalamos previamente. Le dimos en "Aceptar" y la colocamos en el esquemático.</span>
+                <span>Para girar un componente y que quedara orientado como necesitábamos, lo seleccionamos y presionamos la tecla <kbd class="key">R</kbd>.</span>
               </div>
             </li>
             <li id="step-kicad-agregar-el-led-y-el-switch">
@@ -858,6 +859,33 @@
               <div class="step-thumb-row">
                 <div class="step-thumb has-img"><a href="images/kicad-boton-editor-placas.png" target="_blank"><img src="images/kicad-boton-editor-placas.png" alt="Botón 'Cambiar al editor de placas' resaltado en la barra de herramientas del editor de esquemas"></a></div>
                 <div class="step-thumb has-img"><a href="images/kicad-editor-placas-vacio.png" target="_blank"><img src="images/kicad-editor-placas-vacio.png" alt="Editor de placas recién abierto, vacío, sin componentes"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-actualizar-placa-desde-esquema" class="pair">
+              <div class="step-text">
+                <strong>Actualizar placa desde esquema</strong>
+                <span>Después presionamos el botón de arriba "Actualizar placa desde esquema". Se abrió una ventana mostrando los cambios que se iban a aplicar (los componentes con su huella correspondiente) y, sin errores, le dimos en "Actualizar placa". Con eso todos los componentes que teníamos en el editor de esquemas pasaron al editor de placas.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-actualizar-placa-desde-esquema.png" target="_blank"><img src="images/kicad-actualizar-placa-desde-esquema.png" alt="Ventana Actualizar placa desde esquema con la lista de cambios a aplicar y el botón Actualizar placa"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-componentes-en-placa.png" target="_blank"><img src="images/kicad-componentes-en-placa.png" alt="Componentes SW1 a SW4 con sus resistencias y LEDs ya colocados en el editor de placas"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-organizar-los-componentes">
+              <div class="step-thumb has-img"><a href="images/kicad-organizar-componentes-placa.png" target="_blank"><img src="images/kicad-organizar-componentes-placa.png" alt="Componentes organizados en la placa con las líneas ratsnest mostrando las conexiones pendientes de rutear"></a></div>
+              <div class="step-text">
+                <strong>Organizar los componentes</strong>
+                <span>Después de eso solo queda agrupar los componentes como uno quiera; en la imagen se ve cómo los organizamos nosotros. Para girar un componente y que quedara orientado como lo necesitábamos, lo seleccionamos y presionamos la tecla <kbd class="key">R</kbd>.</span>
+              </div>
+            </li>
+            <li id="step-kicad-configurar-tamanos-de-pista-predefinidos" class="pair">
+              <div class="step-text">
+                <strong>Configurar tamaños de pista predefinidos</strong>
+                <span>Arriba a la izquierda, en el menú "Pista: usar el ancho de clase de red", le dimos clic y seleccionamos "Editar tamaños predefinidos...". Se abrió la "Configuración de la placa" ya en la sección "Tamaños predefinidos", y ahí agregamos dos anchos de pista: 0.4 mm, para el tamaño de nuestras pistas, y 2 mm, para el contorno de la placa.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-menu-tamanos-pista.png" target="_blank"><img src="images/kicad-menu-tamanos-pista.png" alt="Menú 'Pista: usar el ancho de clase de red' con la opción Editar tamaños predefinidos resaltada"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-tamanos-predefinidos.png" target="_blank"><img src="images/kicad-tamanos-predefinidos.png" alt="Configuración de la placa en Tamaños predefinidos con los anchos de pista 0.4mm y 2mm agregados"></a></div>
               </div>
             </li>
             <li id="step-kicad-enrutado-de-pistas-y-diseno-de-trazos">
