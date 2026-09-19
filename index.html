@@ -1167,13 +1167,6 @@
                 <span>Así quedó el Contorno, ya ajustado dentro del límite de la hoja.</span>
               </div>
             </li>
-            <li id="step-mods-preparacion-de-archivos-en-inkscape">
-              <div class="step-thumb has-img"><a href="images/mods-inkscape.png" target="_blank"><img src="images/mods-inkscape.png" alt="Archivos ajustados en Inkscape: Contorno, Pistas y Cortes"></a></div>
-              <div class="step-text">
-                <strong>Preparación de archivos en Inkscape</strong>
-                <span>Antes de cargarlos a Mods, ajustamos los archivos exportados en Inkscape: el de Edge.Cuts lo acomodamos para que no se saliera del marco y lo guardamos como Contorno; hicimos lo mismo con el de F.Cu, guardándolo como Pistas, y con el de la capa de usuario de los cortes de alimentación y salidas, guardándolo como Cortes, solo para identificar fácilmente cada archivo.</span>
-              </div>
-            </li>
           </ul>
 
           <h5 class="step-group-title" id="grp-mods-corte-contorno">Configurar el corte del Contorno</h5>
@@ -1216,11 +1209,15 @@
                 <span>Pusimos en 0 los valores de X, Y y Z para que el corte empezara desde el origen, y verificamos que la velocidad quedara en 4 mm/s.</span>
               </div>
             </li>
-            <li id="step-mods-guardar-el-archivo">
-              <div class="step-thumb has-img"><a href="images/mods-guardar-archivo.png" target="_blank"><img src="images/mods-guardar-archivo.png" alt="Guardado del archivo de código Contorno desde Mods"></a></div>
+            <li id="step-mods-guardar-el-archivo" class="pair">
               <div class="step-text">
                 <strong>Guardar el archivo</strong>
                 <span>Por último le dimos en "save file", lo guardamos con el mismo nombre (Contorno) y, al abrir ese archivo, vimos que es puro código: lo que la fresadora necesita para hacer el corte.</span>
+                <span>Así se ve el archivo ya guardado en nuestra carpeta del proyecto: "Contorno.rml".</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/mods-guardar-archivo.png" target="_blank"><img src="images/mods-guardar-archivo.png" alt="Guardado del archivo de código Contorno desde Mods"></a></div>
+                <div class="step-thumb has-img"><a href="images/mods-contorno-rml-carpeta.png" target="_blank"><img src="images/mods-contorno-rml-carpeta.png" alt="Archivo Contorno.rml ya guardado en la carpeta del proyecto"></a></div>
               </div>
             </li>
           </ul>
@@ -1242,10 +1239,17 @@
               </div>
             </li>
             <li id="step-mods-configurar-el-offset-y-calcular">
-              <div class="step-thumb has-img"><a href="images/mods-pistas-vista-previa.png" target="_blank"><img src="images/mods-pistas-vista-previa.png" alt="Vista previa 3D de las pistas sobre la placa"></a></div>
+              <div class="step-thumb has-img"><a href="images/mods-pistas-offset-calculate.png" target="_blank"><img src="images/mods-pistas-offset-calculate.png" alt="Offset number en 2 y botón calculate resaltado para las Pistas"></a></div>
               <div class="step-text">
                 <strong>Configurar el offset y calcular</strong>
                 <span>Cambiamos el offset number a 2 y le dimos en "calculate", lo que abrió la ventana con la vista previa del corte.</span>
+              </div>
+            </li>
+            <li id="step-mods-vista-previa-del-corte-pistas">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-vista-previa.png" target="_blank"><img src="images/mods-pistas-vista-previa.png" alt="Vista previa 3D de las pistas sobre la placa"></a></div>
+              <div class="step-text">
+                <strong>Vista previa del corte</strong>
+                <span>Se abrió una vista previa en 3D de cómo quedaría el fresado de las Pistas sobre la placa.</span>
               </div>
             </li>
             <li id="step-mods-configurar-el-origen">
