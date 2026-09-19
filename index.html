@@ -736,6 +736,10 @@
             <a href="#grp-diseno-placa" class="toc-sub">Diseño de la placa</a>
             <a href="#grp-exportacion-archivos" class="toc-sub">Exportación de archivos</a>
             <a href="#stage-mods" class="toc-stage">2. Proceso en Mods</a>
+            <a href="#grp-mods-preparar-inkscape" class="toc-sub">Preparar los archivos en Inkscape</a>
+            <a href="#grp-mods-corte-contorno" class="toc-sub">Configurar el corte del Contorno</a>
+            <a href="#grp-mods-fresado-pistas" class="toc-sub">Configurar el fresado de Pistas</a>
+            <a href="#grp-mods-perforacion-cortes" class="toc-sub">Configurar la perforación de Cortes</a>
           </nav>
           <div class="process-main">
 
@@ -1133,7 +1137,9 @@
             <span class="stage-chevron">›</span>
           </summary>
           <div class="stage-body">
-          <p class="stage-intro">Mods (<a href="https://modsproject.org/" target="_blank">modsproject.org</a>) es una herramienta web modular que convierte archivos de diseño en códigos de control para máquinas de fabricación digital, como fresadoras CNC.</p>
+          <a class="step-link-callout" href="https://modsproject.org/" target="_blank">https://modsproject.org/</a>
+          <p class="stage-intro">Mods es una herramienta web modular que convierte archivos de diseño en códigos de control para máquinas de fabricación digital, como fresadoras CNC.</p>
+          <h5 class="step-group-title" id="grp-mods-preparar-inkscape">Preparar los archivos en Inkscape</h5>
           <ul class="step-list">
             <li id="step-mods-instalar-inkscape">
               <div class="step-thumb has-img"><a href="images/inkscape-descargar.png" target="_blank"><img src="images/inkscape-descargar.png" alt="Página oficial de descarga de Inkscape App con los botones de Windows, Mac y Linux"></a></div>
@@ -1168,6 +1174,10 @@
                 <span>Antes de cargarlos a Mods, ajustamos los archivos exportados en Inkscape: el de Edge.Cuts lo acomodamos para que no se saliera del marco y lo guardamos como Contorno; hicimos lo mismo con el de F.Cu, guardándolo como Pistas, y con el de la capa de usuario de los cortes de alimentación y salidas, guardándolo como Cortes, solo para identificar fácilmente cada archivo.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-corte-contorno">Configurar el corte del Contorno</h5>
+          <ul class="step-list">
             <li id="step-mods-buscar-y-seleccionar-el-programa">
               <div class="step-thumb has-img"><a href="images/mods-buscar-programa.png" target="_blank"><img src="images/mods-buscar-programa.png" alt="Búsqueda de SRM en Programas de Mods y selección de mill 2D PCB"></a></div>
               <div class="step-text">
@@ -1213,6 +1223,10 @@
                 <span>Por último le dimos en "save file", lo guardamos con el mismo nombre (Contorno) y, al abrir ese archivo, vimos que es puro código: lo que la fresadora necesita para hacer el corte.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-fresado-pistas">Configurar el fresado de Pistas</h5>
+          <ul class="step-list">
             <li id="step-mods-cargar-el-archivo-de-pistas-e-invertir">
               <div class="step-thumb has-img"><a href="images/mods-pistas-cargar-svg.png" target="_blank"><img src="images/mods-pistas-cargar-svg.png" alt="Carga del archivo de Pistas con invert activado"></a></div>
               <div class="step-text">
@@ -1248,6 +1262,10 @@
                 <span>Le dimos en "save file" y lo guardamos con el nombre Pistas.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-perforacion-cortes">Configurar la perforación de Cortes</h5>
+          <ul class="step-list">
             <li id="step-mods-cargar-el-archivo-de-cortes">
               <div class="step-thumb has-img"><a href="images/mods-cortes-cargar-svg.png" target="_blank"><img src="images/mods-cortes-cargar-svg.png" alt="Carga del archivo Perforaciones.svg en Mods"></a></div>
               <div class="step-text">
