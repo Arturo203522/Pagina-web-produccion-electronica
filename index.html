@@ -881,18 +881,44 @@
             <li id="step-kicad-configurar-tamanos-de-pista-predefinidos" class="pair">
               <div class="step-text">
                 <strong>Configurar tamaños de pista predefinidos</strong>
-                <span>Arriba a la izquierda, en el menú "Pista: usar el ancho de clase de red", le dimos clic y seleccionamos "Editar tamaños predefinidos...". Se abrió la "Configuración de la placa" ya en la sección "Tamaños predefinidos", y ahí agregamos dos anchos de pista: 0.4 mm, para el tamaño de nuestras pistas, y 2 mm, para el contorno de la placa.</span>
+                <span>Arriba a la izquierda, en el menú "Pista: usar el ancho de clase de red", le dimos clic y seleccionamos "Editar tamaños predefinidos...". Se abrió la "Configuración de la placa" ya en la sección "Tamaños predefinidos", y ahí agregamos dos anchos de pista: 0.4 mm, para el tamaño de nuestras pistas, y 2 mm, para el contorno de la placa. Ambos tamaños los definimos así por las fresas disponibles en la MonoFab.</span>
               </div>
               <div class="step-thumb-row">
                 <div class="step-thumb has-img"><a href="images/kicad-menu-tamanos-pista.png" target="_blank"><img src="images/kicad-menu-tamanos-pista.png" alt="Menú 'Pista: usar el ancho de clase de red' con la opción Editar tamaños predefinidos resaltada"></a></div>
                 <div class="step-thumb has-img"><a href="images/kicad-tamanos-predefinidos.png" target="_blank"><img src="images/kicad-tamanos-predefinidos.png" alt="Configuración de la placa en Tamaños predefinidos con los anchos de pista 0.4mm y 2mm agregados"></a></div>
               </div>
             </li>
-            <li id="step-kicad-enrutado-de-pistas-y-diseno-de-trazos">
-              <div class="step-thumb has-img"><a href="images/kicad-enrutado-diseno.png" target="_blank"><img src="images/kicad-enrutado-diseno.png" alt="Pistas enrutadas y diseño de trazos personalizados en la placa"></a></div>
+            <li id="step-kicad-enrutar-las-pistas">
+              <div class="step-thumb has-img"><a href="images/kicad-enrutar-pista-unica.png" target="_blank"><img src="images/kicad-enrutar-pista-unica.png" alt="Herramienta Enrutar pista única resaltada en la barra derecha, con la capa F.Cu seleccionada"></a></div>
               <div class="step-text">
-                <strong>Enrutado de pistas y diseño de trazos</strong>
-                <span>Agrupamos los componentes según su ubicación y los conectamos enrutando las pistas en la capa F.Cu con la herramienta "Enrutar pistas", usando un ancho de línea de 0.4 mm en cada una. También agregamos dos resistencias de 0Ω como puente, en nuestro caso ambas de GND en los dos lados, que solo sirvieron para puntear conexiones que no podíamos rutear directo. Con todo ya conectado, usamos las herramientas de dibujo para trazar líneas y darle a la placa el diseño visual que quisimos, con un ancho de línea de 2 mm en cada trazo, definido así por las fresas disponibles en la MonoFab. Después corrimos "Comprobar reglas de diseño" (DRC) para revisar que no quedara ningún error.</span>
+                <strong>Enrutar las pistas</strong>
+                <span>Para enrutar las pistas usamos la herramienta de la derecha "Enrutar pista única" (también se puede abrir presionando la tecla <kbd class="key">X</kbd>). Hay que fijarse que esté seleccionada la capa F.Cu, como se ve en la imagen, y ahí empezamos a conectar nuestros componentes. Solo deja conectarlos si son "compatibles"; por ejemplo, no se puede conectar GND con V3.3.</span>
+                <span>Antes de empezar, arriba a la izquierda revisamos los tamaños que habíamos creado y seleccionamos el de 0.4 mm, para que nuestra pista se hiciera de ese tamaño.</span>
+              </div>
+            </li>
+            <li id="step-kicad-repetir-el-enrutado-con-los-demas-componentes">
+              <div class="step-thumb has-img"><a href="images/kicad-enrutado-progreso.png" target="_blank"><img src="images/kicad-enrutado-progreso.png" alt="La mayoría de las pistas ya enrutadas en F.Cu, revisando que todas midan 0.4mm"></a></div>
+              <div class="step-text">
+                <strong>Repetir el enrutado con los demás componentes</strong>
+                <span>Se hace lo mismo con todos los demás componentes, revisando siempre que todas las pistas midan 0.4 mm. También agregamos dos resistencias de 0Ω como puente, en nuestro caso ambas de GND en los dos lados, que solo sirvieron para puntear conexiones que no podíamos rutear directo.</span>
+              </div>
+            </li>
+            <li id="step-kicad-trazar-el-contorno-de-la-placa" class="pair">
+              <div class="step-text">
+                <strong>Trazar el contorno de la placa</strong>
+                <span>Del lado derecho, en el mismo lugar donde seleccionamos F.Cu, ahora buscamos la capa "Edge.Cuts". Con ayuda de la herramienta "Línea" y, del lado izquierdo, seleccionando el tamaño de 2 mm que habíamos establecido antes, empezamos a trazar la forma de nuestra PCB, fijándonos que todas las líneas cerraran bien. Se puede usar cualquier otra herramienta, como cuadrado o círculo, pero en nuestro diseño solo usamos líneas.</span>
+                <span>Así quedó después de unir todas las líneas y cerrar el contorno completo.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-contorno-edge-cuts.png" target="_blank"><img src="images/kicad-contorno-edge-cuts.png" alt="Capa Edge.Cuts seleccionada junto con la herramienta Línea y el tamaño de 2mm"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-contorno-cerrado.png" target="_blank"><img src="images/kicad-contorno-cerrado.png" alt="Contorno octagonal de la PCB ya cerrado con todas las líneas unidas"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-comprobar-reglas-de-diseno">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Comprobar reglas de diseño</strong>
+                <span>Después corrimos "Comprobar reglas de diseño" (DRC) para revisar que no quedara ningún error.</span>
               </div>
             </li>
             <li id="step-kicad-marcado-de-orificios-y-etiquetas">
