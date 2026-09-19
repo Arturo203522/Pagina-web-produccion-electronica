@@ -755,6 +755,33 @@
                 <span>De la misma manera, con <kbd class="key">P</kbd>, buscamos "gnd" y elegimos "GND". A ninguno de los dos símbolos le aparece huella asignada, pero no importa porque son solo etiquetas de alimentación (no son componentes físicos que se vayan a soldar). Le dimos en "Aceptar" y lo colocamos en el esquemático.</span>
               </div>
             </li>
+            <li id="step-kicad-organizar-y-conectar-los-componentes">
+              <div class="step-thumb has-img"><a href="images/kicad-conexion-componentes.png" target="_blank"><img src="images/kicad-conexion-componentes.png" alt="Componentes organizados y conectados con cables verdes: PWR_3V3, SW1, R1, R2, D1 y GND"></a></div>
+              <div class="step-text">
+                <strong>Organizar y conectar los componentes</strong>
+                <span>Ya con todos los componentes en el esquemático, los acomodamos como se ve en la imagen: PWR_3V3 arriba conectado al switch SW1, y de ahí bajando hacia la resistencia R1 (1K) por un lado y, del mismo punto, hacia la resistencia R2 (220) por otro; R2 se conecta al LED D1 (azul), y tanto R1 como D1 se unen abajo en un mismo punto que se conecta a GND, y GND a su vez a PWR_GND.</span>
+                <span>Para conectarlos, nos acercamos a la esquina o al pin de un componente hasta que el cursor cambia a un lápiz verde; eso significa que ahí se puede empezar a trazar un cable. Le dimos clic y lo arrastramos hasta el pin del siguiente componente para unirlos, y así fuimos conectando todo el circuito.</span>
+              </div>
+            </li>
+            <li id="step-kicad-repetir-el-circuito-para-los-4-botones">
+              <div class="step-thumb has-img"><a href="images/kicad-4-circuitos-conectados.png" target="_blank"><img src="images/kicad-4-circuitos-conectados.png" alt="Los cuatro circuitos de botón, resistencias y LED ya conectados: SW1-D1, SW2-D2, SW3-D3 y SW4-D4"></a></div>
+              <div class="step-text">
+                <strong>Repetir el circuito para los 4 botones</strong>
+                <span>Repetimos los mismos pasos (agregar el switch, las dos resistencias, el LED y los símbolos de alimentación, y conectarlos) hasta tener los cuatro circuitos completos: SW1 con R1, R2 y D1 (azul); SW2 con R3, R4 y D2 (rojo); SW3 con R5, R6 y D3 (azul); y SW4 con R7, R8 y D4 (rojo), cada uno con su propio PWR_3V3 y PWR_GND.</span>
+                <span><strong style="font-size:15.5px; display:inline;">Nota:</strong> en lugar de agregar cada componente desde cero, también se pueden seleccionar los que ya están conectados y copiarlos con <kbd class="key">Ctrl</kbd>+<kbd class="key">C</kbd> y pegarlos con <kbd class="key">Ctrl</kbd>+<kbd class="key">V</kbd>, para después solo renombrarlos y acomodarlos.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-el-conector-pinheader" class="pair">
+              <div class="step-text">
+                <strong>Agregar los conectores PinHeader</strong>
+                <span>Presionamos otra vez <kbd class="key">A</kbd> y buscamos "PinHeader_01x04_P2.54mm_Vertical_THT_D1.4mm". Seleccionamos ese conector, le dimos en "Aceptar" y lo agregamos al esquemático.</span>
+                <span>Hicimos lo mismo buscando ahora "PinHeader_01x02_P2.54mm_Vertical_THT_D1.4mm", la misma familia de conector pero de 2 pines en lugar de 4, y lo agregamos también.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-agregar-pinheader-1x04.png" target="_blank"><img src="images/kicad-agregar-pinheader-1x04.png" alt="Ventana Elegir símbolo con búsqueda 'PinHeader_01x04_P2.54mm_Vertical_THT_D1.4mm' seleccionado"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-agregar-pinheader-1x02.png" target="_blank"><img src="images/kicad-agregar-pinheader-1x02.png" alt="Ventana Elegir símbolo con búsqueda 'PinHeader_01x02_P2.54mm_Vertical_THT_D1.4mm' seleccionado"></a></div>
+              </div>
+            </li>
           </ul>
 
           <ul class="step-list">
