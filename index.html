@@ -938,11 +938,35 @@
                 <span>Corriendo el DRC otra vez, seguía marcando los mismos 2 errores, pero ahora sí se podían ignorar, ya que estaban conectados bien, por así decirlo, con las resistencias que agregamos.</span>
               </div>
             </li>
-            <li id="step-kicad-marcado-de-orificios-y-etiquetas">
-              <div class="step-thumb has-img"><a href="images/kicad-orificios-etiquetas.png" target="_blank"><img src="images/kicad-orificios-etiquetas.png" alt="Orificios marcados con círculos y etiquetas GND y V+ sobre F.Cu"></a></div>
+            <li id="step-kicad-marcar-los-orificios-con-un-circulo" class="pair">
               <div class="step-text">
-                <strong>Marcado de orificios y etiquetas</strong>
-                <span>Ya sin errores y con todo bien conectado, usamos una de las capas de usuario para marcar con círculos los orificios de los conectores de alimentación y de salidas. Con otra capa de usuario distinta a la de los cortes colocamos el texto GND y V+ sobre F.Cu, solo como guía visual para identificar de qué lado va cada uno, sin que esto se corte.</span>
+                <strong>Marcar los orificios con un círculo</strong>
+                <span>Del lado derecho seleccionamos cualquier capa de usuario (en nuestro caso usamos "User.2", pero en realidad no importa cuál se use) y, con la herramienta "Círculo", dibujamos uno lo más parecido posible a las circunferencias de los pads de alimentación.</span>
+                <span>Ya puesto, lo seleccionamos y con la tecla <kbd class="key">E</kbd> se abrió la ventana "Círculo Propiedades", donde pudimos moverlo con los valores de X y Y para que quedara lo más exacto posible sobre la circunferencia del pad. En esa misma ventana, en "Relleno", lo cambiamos de "Sin relleno" a "Sólida".</span>
+                <span>Al cambiarlo a "Sólida" el círculo se rellenó por completo, como se ve en la segunda imagen.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-circulo-propiedades-user.png" target="_blank"><img src="images/kicad-circulo-propiedades-user.png" alt="Ventana Círculo Propiedades con los valores de X, Y, radio y la opción de Relleno en Sólida sobre la capa User.2"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-circulo-relleno-solido.png" target="_blank"><img src="images/kicad-circulo-relleno-solido.png" alt="Círculo de la capa User.2 ya relleno de forma sólida sobre el pad de alimentación"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-crear-matriz-para-el-segundo-circulo" class="pair">
+              <div class="step-text">
+                <strong>Crear matriz para el segundo círculo</strong>
+                <span>Con el círculo ya seleccionado, le dimos clic derecho y elegimos "Crear desde la selección" y después "Crear matriz".</span>
+                <span>Se abrió la ventana "Crear matriz". En "Matriz en cuadrícula" pusimos "Cantidad horizontal" en 2 y "Cantidad vertical" en 1, y le dimos en "Aceptar".</span>
+                <span>Con eso, la matriz colocó automáticamente el segundo círculo perfectamente alineado sobre el otro pad de alimentación.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-crear-matriz-menu.png" target="_blank"><img src="images/kicad-crear-matriz-menu.png" alt="Menú contextual con Crear desde la selección y Crear matriz resaltados"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-crear-matriz-ventana.png" target="_blank"><img src="images/kicad-crear-matriz-ventana.png" alt="Ventana Crear matriz con cantidad horizontal 2 y cantidad vertical 1"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-resultado-de-la-matriz">
+              <div class="step-thumb has-img"><a href="images/kicad-matriz-resultado.png" target="_blank"><img src="images/kicad-matriz-resultado.png" alt="Los dos círculos ya colocados en su lugar sobre los pads del conector J1 de Alimentación"></a></div>
+              <div class="step-text">
+                <strong>Resultado de la matriz</strong>
+                <span>Así quedaron los dos círculos, ya perfectamente colocados sobre los pads del conector "Alimentación" (J1).</span>
               </div>
             </li>
           </ul>
