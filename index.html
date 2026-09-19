@@ -969,6 +969,43 @@
                 <span>Así quedaron los dos círculos, ya perfectamente colocados sobre los pads del conector "Alimentación" (J1).</span>
               </div>
             </li>
+            <li id="step-kicad-repetir-con-el-conector-de-salidas">
+              <div class="step-thumb has-img"><a href="images/kicad-circulos-salidas-j2.png" target="_blank"><img src="images/kicad-circulos-salidas-j2.png" alt="Los cuatro círculos ya colocados sobre los pads del conector J2 de Salidas"></a></div>
+              <div class="step-text">
+                <strong>Repetir con el conector de Salidas</strong>
+                <span>Hicimos exactamente lo mismo con el conector "Salidas" (J2): dibujamos un círculo sobre el primer pad, lo ajustamos con la tecla <kbd class="key">E</kbd> y lo cambiamos a relleno "Sólida", y después, con clic derecho, "Crear desde la selección" y "Crear matriz", solo que esta vez pusimos "Cantidad horizontal" en 4 y "Cantidad vertical" en 1, ya que este conector tiene cuatro pads en lugar de dos.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-texto-gnd-y-v-mas" class="pair">
+              <div class="step-text">
+                <strong>Agregar texto de GND y V+</strong>
+                <span>Seleccionamos otra vez "Dibujar texto" (del lado derecho o con la tecla <kbd class="key">T</kbd>) y, en la capa, pusimos "F.Cu". Se abrió la ventana "Propiedades del texto" y ahí escribimos "GND" y, después, "V+".</span>
+                <span>Esto es solo una referencia para nosotros, para saber cuál pad es cuál; lo pusimos en F.Cu para que no afectara en nada al circuito. Colocamos cada etiqueta al lado del conector "Alimentación", en su lado correspondiente.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-texto-gnd-vplus-propiedades.png" target="_blank"><img src="images/kicad-texto-gnd-vplus-propiedades.png" alt="Ventana Propiedades del texto con GND escrito y la capa configurada en F.Cu"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-texto-gnd-vplus-resultado.png" target="_blank"><img src="images/kicad-texto-gnd-vplus-resultado.png" alt="Etiquetas GND y V+ colocadas al lado del conector Alimentación, cada una en su lado correspondiente"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-crear-la-zona-de-cobre" class="pair">
+              <div class="step-text">
+                <strong>Crear la zona de cobre</strong>
+                <span>Del lado derecho seleccionamos "Dibujar zonas rellenas" (también se puede abrir con <kbd class="key">Ctrl</kbd>+<kbd class="key">Mayúsculas</kbd>+<kbd class="key">Z</kbd>). Se abrió la ventana "Propiedades de la zona de cobre", donde en "Nombre de red" dejamos "&lt;sin red&gt;" y verificamos que la capa marcada fuera "F.Cu".</span>
+                <span>Igual que hicimos con el contorno, fuimos trazando la zona sobre las líneas del borde de la placa, hasta cerrar todo el perímetro por completo.</span>
+                <span>Ya con el perímetro cerrado, presionamos la tecla <kbd class="key">B</kbd> para "Rellenar" la zona, y toda la placa quedó cubierta de cobre en esa capa.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-zona-de-cobre-propiedades.png" target="_blank"><img src="images/kicad-zona-de-cobre-propiedades.png" alt="Ventana Propiedades de la zona de cobre con Nombre de red en sin red y la capa F.Cu seleccionada"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-zona-perimetro-cerrado.png" target="_blank"><img src="images/kicad-zona-perimetro-cerrado.png" alt="Perímetro de la zona de cobre ya cerrado sobre el contorno de la placa"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-rellenar-la-zona-con-b">
+              <div class="step-thumb has-img"><a href="images/kicad-zona-rellena-b.png" target="_blank"><img src="images/kicad-zona-rellena-b.png" alt="Placa completa ya rellena de cobre en F.Cu después de presionar la tecla B"></a></div>
+              <div class="step-text">
+                <strong>Rellenar la zona con B</strong>
+                <span>Así quedó la placa después de presionar <kbd class="key">B</kbd>: toda el área dentro del contorno se rellenó de cobre en la capa F.Cu.</span>
+              </div>
+            </li>
           </ul>
 
           <h5 class="step-group-title">Exportación de archivos</h5>
