@@ -1111,6 +1111,17 @@
                 <div class="step-thumb has-img"><a href="images/kicad-gerber.png" target="_blank"><img src="images/kicad-gerber.png" alt="Ventana de exportación de Gerber en formato SVG"></a></div>
               </div>
             </li>
+            <li id="step-kicad-archivos-svg-generados" class="pair">
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-svg-pistas.png" target="_blank"><img src="images/kicad-svg-pistas.png" alt="Archivo Pistas.svg abierto en el navegador con las pistas y las etiquetas GND y V+"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-svg-cortes.png" target="_blank"><img src="images/kicad-svg-cortes.png" alt="Archivo de Cortes.svg abierto en el navegador, con los puntos de las perforaciones"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-svg-contorno.png" target="_blank"><img src="images/kicad-svg-contorno.png" alt="Archivo Contorno.svg abierto en el navegador con la silueta octagonal de la placa"></a></div>
+              </div>
+              <div class="step-text">
+                <strong>Archivos SVG generados</strong>
+                <span>Al darle en "Trazar" se generaron los archivos SVG en la carpeta que habíamos elegido: Pistas.svg (con las pistas y las etiquetas GND y V+), el archivo de Cortes (con los puntos de las perforaciones de alimentación y salidas) y Contorno.svg (con la silueta de la placa). Estos son los archivos que después vamos a preparar en Inkscape y cargar a Mods.</span>
+              </div>
+            </li>
           </ul>
           </div>
         </details>
@@ -1124,6 +1135,32 @@
           <div class="stage-body">
           <p class="stage-intro">Mods (<a href="https://modsproject.org/" target="_blank">modsproject.org</a>) es una herramienta web modular que convierte archivos de diseño en códigos de control para máquinas de fabricación digital, como fresadoras CNC.</p>
           <ul class="step-list">
+            <li id="step-mods-instalar-inkscape">
+              <div class="step-thumb has-img"><a href="images/inkscape-descargar.png" target="_blank"><img src="images/inkscape-descargar.png" alt="Página oficial de descarga de Inkscape App con los botones de Windows, Mac y Linux"></a></div>
+              <div class="step-text">
+                <strong>Instalar Inkscape</strong>
+                <a class="step-link-callout" href="https://inkscape.app/es/descargar/" target="_blank">https://inkscape.app/es/descargar/</a>
+                <span>Ese link lleva a la página oficial de descarga de Inkscape. Lo necesitamos porque los archivos que exportamos de KiCad (Contorno, Pistas y Cortes) hay que ajustarlos antes de cargarlos a Mods, y Inkscape es la herramienta que usamos para editar esos archivos vectoriales (SVG). Hay que instalarlo según el sistema operativo de cada quien (Windows, Mac o Linux).</span>
+              </div>
+            </li>
+            <li id="step-mods-abrir-y-ajustar-el-contorno" class="pair">
+              <div class="step-text">
+                <strong>Abrir y ajustar el Contorno</strong>
+                <span>Ya instalado Inkscape, se abrió esta interfaz vacía. Ahí abrimos el archivo SVG que antes habíamos nombrado como Contorno.</span>
+                <span>Como se ve en la segunda imagen, la figura se salía del límite de la hoja. Para ajustarlo, lo seleccionamos y lo movimos o achicamos con las flechas negras que aparecen en las esquinas y los lados del cuadro de selección, hasta que quedó como en la tercera imagen: dentro del límite de la hoja, pero rozándolo justo.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/inkscape-interfaz-vacia.png" target="_blank"><img src="images/inkscape-interfaz-vacia.png" alt="Interfaz vacía de Inkscape recién abierta, sin ningún objeto"></a></div>
+                <div class="step-thumb has-img"><a href="images/inkscape-contorno-fuera-de-limite.png" target="_blank"><img src="images/inkscape-contorno-fuera-de-limite.png" alt="Archivo Contorno.svg abierto en Inkscape, saliéndose del límite de la hoja"></a></div>
+              </div>
+            </li>
+            <li id="step-mods-contorno-ajustado-al-limite">
+              <div class="step-thumb has-img"><a href="images/inkscape-contorno-ajustado.png" target="_blank"><img src="images/inkscape-contorno-ajustado.png" alt="Contorno ya ajustado dentro del límite de la hoja, rozándolo justo"></a></div>
+              <div class="step-text">
+                <strong>Contorno ajustado al límite</strong>
+                <span>Así quedó el Contorno, ya ajustado dentro del límite de la hoja.</span>
+              </div>
+            </li>
             <li id="step-mods-preparacion-de-archivos-en-inkscape">
               <div class="step-thumb has-img"><a href="images/mods-inkscape.png" target="_blank"><img src="images/mods-inkscape.png" alt="Archivos ajustados en Inkscape: Contorno, Pistas y Cortes"></a></div>
               <div class="step-text">
