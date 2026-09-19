@@ -801,6 +801,24 @@
                 <span>Por fines de practicidad, también le cambiamos el nombre a los conectores: J1 lo renombramos como "Alimentación" y J2 como "Salidas", para identificarlos más fácil de un vistazo.</span>
               </div>
             </li>
+            <li id="step-kicad-copiar-las-etiquetas-a-los-4-circuitos">
+              <div class="step-thumb has-img"><a href="images/kicad-etiquetas-en-4-circuitos.png" target="_blank"><img src="images/kicad-etiquetas-en-4-circuitos.png" alt="Los cuatro circuitos con las etiquetas V3.3, GND y S1 a S4 ya conectadas a cada switch"></a></div>
+              <div class="step-text">
+                <strong>Copiar las etiquetas a los 4 circuitos</strong>
+                <span>En lugar de repetir el proceso de agregar cada etiqueta desde cero, copiamos y pegamos (con <kbd class="key">Ctrl</kbd>+<kbd class="key">C</kbd> y <kbd class="key">Ctrl</kbd>+<kbd class="key">V</kbd>) las etiquetas de "V3.3", "GND" y "S1" a "S4" que ya habíamos creado, y las conectamos a cada uno de los cuatro circuitos: S1 al switch SW3, S2 al switch SW4, S3 al switch SW1 y S4 al switch SW2, cada uno con su propio "V3.3" y "GND" ya conectados a PWR_3V3 y PWR_GND.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-titulos-de-texto" class="pair">
+              <div class="step-text">
+                <strong>Agregar títulos de texto</strong>
+                <span>Para tener más ordenado el esquemático, del lado derecho buscamos la herramienta "Dibujar texto" (la T), que también se puede abrir presionando la tecla <kbd class="key">T</kbd>. La seleccionamos, escribimos "Entradas y Salidas" y le pusimos un tamaño de letra de 3 mm, solo por comodidad y para que se viera más grande, y lo colocamos arriba de los conectores PinHeader que habíamos puesto antes. Este texto es solo una referencia visual para identificar rápido qué es cada cosa; no forma parte del circuito.</span>
+                <span>Hicimos lo mismo con otro texto, "Botones", que colocamos arriba de todos los componentes de los switches que ya habíamos agregado antes.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-texto-entradas-salidas.png" target="_blank"><img src="images/kicad-texto-entradas-salidas.png" alt="Ventana Propiedades del texto con 'Entradas y Salidas' escrito, y la herramienta Dibujar texto (T) resaltada"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-texto-entradas-salidas-resultado.png" target="_blank"><img src="images/kicad-texto-entradas-salidas-resultado.png" alt="Título 'Entradas y Salidas' colocado arriba de los conectores J1 (Alimentación) y J2 (Salidas)"></a></div>
+              </div>
+            </li>
           </ul>
 
           <ul class="step-list">
