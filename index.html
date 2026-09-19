@@ -915,10 +915,27 @@
               </div>
             </li>
             <li id="step-kicad-comprobar-reglas-de-diseno">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/kicad-drc-2-errores.png" target="_blank"><img src="images/kicad-drc-2-errores.png" alt="Comprobar reglas de diseño marcando 2 errores de conexión faltante entre elementos"></a></div>
               <div class="step-text">
                 <strong>Comprobar reglas de diseño</strong>
-                <span>Después corrimos "Comprobar reglas de diseño" (DRC) para revisar que no quedara ningún error.</span>
+                <span>Corrimos "Comprobar reglas de diseño" (DRC) para revisar que no quedara ningún error. En nuestro caso marcó 2 errores de conexión, que por cómo quedó nuestro diseño, la única forma de arreglarlos era agregando 2 resistencias.</span>
+              </div>
+            </li>
+            <li id="step-kicad-agregar-resistencias-de-puente" class="pair">
+              <div class="step-text">
+                <strong>Agregar resistencias de puente</strong>
+                <span>Agregamos esas 2 resistencias en el editor de esquemas; en ambos lados tenían GND, así que les conectamos GND. Las actualizamos al editor de placas con "Actualizar placa desde esquema", y ya ahí las acomodamos y conectamos.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-resistencias-puente-esquematico.png" target="_blank"><img src="images/kicad-resistencias-puente-esquematico.png" alt="Resistencias R9 y R10 de 220 en el editor de esquemas, ambas con GND conectado en los dos lados"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-resistencias-puente-placa.png" target="_blank"><img src="images/kicad-resistencias-puente-placa.png" alt="Resistencias R9 y R10 ya acomodadas y conectadas en el editor de placas"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-verificar-de-nuevo-y-ver-que-se-puedan-ignorar">
+              <div class="step-thumb has-img"><a href="images/kicad-drc-errores-ignorables.png" target="_blank"><img src="images/kicad-drc-errores-ignorables.png" alt="DRC corriendo de nuevo, todavía con 2 errores de conexión pero ya ignorables"></a></div>
+              <div class="step-text">
+                <strong>Verificar de nuevo y ver que se puedan ignorar</strong>
+                <span>Corriendo el DRC otra vez, seguía marcando los mismos 2 errores, pero ahora sí se podían ignorar, ya que estaban conectados bien, por así decirlo, con las resistencias que agregamos.</span>
               </div>
             </li>
             <li id="step-kicad-marcado-de-orificios-y-etiquetas">
