@@ -812,15 +812,32 @@
               <div class="step-text">
                 <strong>Agregar títulos de texto</strong>
                 <span>Para tener más ordenado el esquemático, del lado derecho buscamos la herramienta "Dibujar texto" (la T), que también se puede abrir presionando la tecla <kbd class="key">T</kbd>. La seleccionamos, escribimos "Entradas y Salidas" y le pusimos un tamaño de letra de 3 mm, solo por comodidad y para que se viera más grande, y lo colocamos arriba de los conectores PinHeader que habíamos puesto antes. Este texto es solo una referencia visual para identificar rápido qué es cada cosa; no forma parte del circuito.</span>
-                <span>Hicimos lo mismo con otro texto, "Botones", que colocamos arriba de todos los componentes de los switches que ya habíamos agregado antes.</span>
               </div>
               <div class="step-thumb-row">
                 <div class="step-thumb has-img"><a href="images/kicad-texto-entradas-salidas.png" target="_blank"><img src="images/kicad-texto-entradas-salidas.png" alt="Ventana Propiedades del texto con 'Entradas y Salidas' escrito, y la herramienta Dibujar texto (T) resaltada"></a></div>
                 <div class="step-thumb has-img"><a href="images/kicad-texto-entradas-salidas-resultado.png" target="_blank"><img src="images/kicad-texto-entradas-salidas-resultado.png" alt="Título 'Entradas y Salidas' colocado arriba de los conectores J1 (Alimentación) y J2 (Salidas)"></a></div>
               </div>
             </li>
+            <li id="step-kicad-agregar-titulo-botones" class="pair">
+              <div class="step-text">
+                <strong>Agregar el título "Botones"</strong>
+                <span>Hicimos lo mismo otra vez con la tecla <kbd class="key">T</kbd>: escribimos "Botones", con el mismo tamaño de letra de 3 mm, y lo colocamos arriba de los cuatro circuitos de switches que ya habíamos agregado, para agruparlos visualmente y que se identificara más fácil qué es cada cosa.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-texto-botones.png" target="_blank"><img src="images/kicad-texto-botones.png" alt="Ventana Propiedades del texto con 'Botones' escrito, tamaño de texto 3mm y la herramienta Dibujar texto (T) resaltada"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-texto-botones-resultado.png" target="_blank"><img src="images/kicad-texto-botones-resultado.png" alt="Título 'Botones' colocado arriba de los cuatro circuitos de switches, resistencias y LEDs"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-encerrar-los-grupos-con-rectangulos">
+              <div class="step-thumb has-img"><a href="images/kicad-rectangulos-agrupacion.png" target="_blank"><img src="images/kicad-rectangulos-agrupacion.png" alt="Los grupos Entradas y salidas y Botones encerrados cada uno con un rectángulo azul"></a></div>
+              <div class="step-text">
+                <strong>Encerrar los grupos con rectángulos</strong>
+                <span>Para que se vieran más ordenados, seleccionamos la herramienta "Dibujar rectángulos" (en la barra derecha) y encerramos con un rectángulo cada uno de los dos grupos que armamos: uno alrededor de "Entradas y Salidas" con sus conectores, y otro alrededor de "Botones" con los cuatro circuitos de switches. Esto es solo por comodidad visual, no forma parte del circuito.</span>
+              </div>
+            </li>
           </ul>
 
+          <h5 class="step-group-title">Verificación del esquemático</h5>
           <ul class="step-list">
             <li id="step-kicad-verificacion-con-el-control-de-reglas-electricas">
               <div class="step-thumb has-img"><a href="images/kicad-erc.png" target="_blank"><img src="images/kicad-erc.png" alt="Ventana del Control de Reglas Eléctricas (ERC) en KiCad"></a></div>
@@ -829,6 +846,10 @@
                 <span>Una vez agregados todos los componentes, corrimos el Control de Reglas Eléctricas (ERC) para asegurarnos de que no quedara ningún error de conexión en el esquemático antes de pasar a la placa.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title">Diseño de la placa</h5>
+          <ul class="step-list">
             <li id="step-kicad-paso-al-editor-de-placas">
               <div class="step-thumb has-img"><a href="images/kicad-editor-placas.png" target="_blank"><img src="images/kicad-editor-placas.png" alt="Editor de placas de KiCad recién abierto"></a></div>
               <div class="step-text">
@@ -850,6 +871,10 @@
                 <span>Ya sin errores y con todo bien conectado, usamos una de las capas de usuario para marcar con círculos los orificios de los conectores de alimentación y de salidas. Con otra capa de usuario distinta a la de los cortes colocamos el texto GND y V+ sobre F.Cu, solo como guía visual para identificar de qué lado va cada uno, sin que esto se corte.</span>
               </div>
             </li>
+          </ul>
+
+          <h5 class="step-group-title">Exportación de archivos</h5>
+          <ul class="step-list">
             <li id="step-kicad-exportacion-de-archivos-gerber">
               <div class="step-thumb has-img"><a href="images/kicad-gerber.png" target="_blank"><img src="images/kicad-gerber.png" alt="Ventana de exportación de Gerber en formato SVG"></a></div>
               <div class="step-text">
