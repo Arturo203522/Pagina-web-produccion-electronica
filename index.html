@@ -782,6 +782,25 @@
                 <div class="step-thumb has-img"><a href="images/kicad-agregar-pinheader-1x02.png" target="_blank"><img src="images/kicad-agregar-pinheader-1x02.png" alt="Ventana Elegir símbolo con búsqueda 'PinHeader_01x02_P2.54mm_Vertical_THT_D1.4mm' seleccionado"></a></div>
               </div>
             </li>
+            <li id="step-kicad-agregar-etiquetas-de-red" class="pair">
+              <div class="step-text">
+                <strong>Agregar etiquetas de red</strong>
+                <span>Después agregamos etiquetas de red (net labels), que se pueden colocar dándole al botón de la barra derecha o presionando la tecla <kbd class="key">L</kbd>. En la ventana "Propiedades de la etiqueta" escribimos el nombre de la red, por ejemplo "V3.3" o "GND", y le dimos en "Aceptar" para colocarla sobre el cable correspondiente.</span>
+                <span>Usamos esa misma herramienta para etiquetar los cuatro switches: "S1", "S2", "S3" y "S4", uno por cada botón, para identificar cada señal de salida.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/kicad-etiquetas-de-red.png" target="_blank"><img src="images/kicad-etiquetas-de-red.png" alt="Ventana Propiedades de la etiqueta con las etiquetas de red V3.3 y GND, y el botón de etiqueta resaltado en la barra derecha"></a></div>
+                <div class="step-thumb has-img"><a href="images/kicad-etiquetas-s1-s4.png" target="_blank"><img src="images/kicad-etiquetas-s1-s4.png" alt="Cuatro ventanas de Propiedades de la etiqueta con las etiquetas S1, S2, S3 y S4"></a></div>
+              </div>
+            </li>
+            <li id="step-kicad-conectar-las-etiquetas-a-los-pinheader">
+              <div class="step-thumb has-img"><a href="images/kicad-conectores-alimentacion-salidas.png" target="_blank"><img src="images/kicad-conectores-alimentacion-salidas.png" alt="Conector J1 (Alimentación) con los pines V3.3 y GND, y conector J2 (Salidas) con los pines S1, S2, S3 y S4"></a></div>
+              <div class="step-text">
+                <strong>Conectar las etiquetas a los conectores PinHeader</strong>
+                <span>Ya con las etiquetas listas, conectamos cada una a su pin correspondiente en los conectores PinHeader que habíamos agregado: en el conector de 2 pines (J1) conectamos el pin 1 a "V3.3" y el pin 2 a "GND"; en el conector de 4 pines (J2) conectamos los pines 1 a 4 a "S1", "S2", "S3" y "S4" respectivamente.</span>
+                <span>Por fines de practicidad, también le cambiamos el nombre a los conectores: J1 lo renombramos como "Alimentación" y J2 como "Salidas", para identificarlos más fácil de un vistazo.</span>
+              </div>
+            </li>
           </ul>
 
           <ul class="step-list">
