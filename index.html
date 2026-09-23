@@ -746,6 +746,8 @@
             <a href="#grp-mods-corte-contorno" class="toc-sub">Configurar el corte del Contorno</a>
             <a href="#grp-mods-fresado-pistas" class="toc-sub">Configurar el fresado de Pistas</a>
             <a href="#grp-mods-perforacion-cortes" class="toc-sub">Configurar la perforación de Cortes</a>
+            <a href="#stage-monofab" class="toc-stage">3. Proceso en MonoFab</a>
+            <a href="#grp-monofab-driver" class="toc-sub">Instalación del driver de la MonoFab</a>
           </nav>
           <div class="process-main">
 
@@ -1317,6 +1319,106 @@
               <div class="step-thumb-row">
                 <div class="step-thumb has-img"><a href="images/mods-cortes-guardar-archivo.png" target="_blank"><img src="images/mods-cortes-guardar-archivo.png" alt="Guardado del archivo de código Cortes desde Mods"></a></div>
                 <div class="step-thumb has-img"><a href="images/mods-cortes-archivo-carpeta.png" target="_blank"><img src="images/mods-cortes-archivo-carpeta.png" alt="Archivo Perforaciones.rml ya guardado en la carpeta del proyecto"></a></div>
+              </div>
+            </li>
+          </ul>
+          </div>
+        </details>
+
+        <details class="stage" id="stage-monofab">
+          <summary class="stage-summary">
+            <span class="stage-num">3</span>
+            <h4>Proceso en MonoFab</h4>
+            <span class="stage-chevron">›</span>
+          </summary>
+          <div class="stage-body">
+          <p class="stage-intro">La MonoFab SRM-20 es una fresadora CNC de escritorio de Roland, pensada para prototipado rápido. Es la máquina física que corta y graba la placa: con los archivos de código que generamos en Mods (Contorno, Pistas y Cortes), la fresa se mueve automáticamente y va tallando sobre la placa fenólica las pistas de cobre, los orificios y el contorno que diseñamos en KiCad, hasta dejar la PCB físicamente terminada.</p>
+
+          <h5 class="step-group-title" id="grp-monofab-driver">Instalación del driver de la MonoFab</h5>
+          <ul class="step-list">
+            <li id="step-monofab-acceder-a-la-carpeta-en-sharepoint">
+              <div class="step-thumb has-img"><a href="images/monofab-sharepoint-carpeta.png" target="_blank"><img src="images/monofab-sharepoint-carpeta.png" alt="Carpeta monoFab_Driver en SharePoint, dentro del sitio de Fab Academy P24"></a></div>
+              <div class="step-text">
+                <strong>Acceder a la carpeta en SharePoint</strong>
+                <a class="step-link-callout" href="https://iberopuebla.sharepoint.com/sites/FabAcademyP24108/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FFabAcademyP24108%2FDocumentos%20compartidos%2FGeneral%2FmonoFab%5FDriver&p=true&ga=1" target="_blank">Fab Academy P24 · monoFab_Driver</a>
+                <span>Ese link lleva a la carpeta compartida en SharePoint donde está el driver. Ahí aparece la carpeta "monofabDriver_V180"; le dimos clic para entrar.</span>
+              </div>
+            </li>
+            <li id="step-monofab-descargar-la-carpeta">
+              <div class="step-thumb has-img"><a href="images/monofab-sharepoint-descargar.png" target="_blank"><img src="images/monofab-sharepoint-descargar.png" alt="Menú de opciones en SharePoint con la opción Descargar resaltada"></a></div>
+              <div class="step-text">
+                <strong>Descargar la carpeta</strong>
+                <span>Le dimos clic derecho a la carpeta y seleccionamos "Descargar".</span>
+              </div>
+            </li>
+            <li id="step-monofab-elegir-la-carpeta-del-sistema-operativo">
+              <div class="step-thumb has-img"><a href="images/monofab-carpeta-sistema-operativo.png" target="_blank"><img src="images/monofab-carpeta-sistema-operativo.png" alt="Carpetas del driver según el sistema operativo: WIN7X64, WIN7X86, WIN8X64, WIN8X86, WIN10X64, WIN10X86"></a></div>
+              <div class="step-text">
+                <strong>Elegir la carpeta de tu sistema operativo</strong>
+                <span>Dentro de la carpeta del driver hay una subcarpeta para cada sistema operativo. Nosotros instalamos la de WIN10X64, pero esto depende de cada quien, según la versión de Windows y si es de 32 o 64 bits.</span>
+              </div>
+            </li>
+            <li id="step-monofab-abrir-setup">
+              <div class="step-thumb has-img"><a href="images/monofab-setup64.png" target="_blank"><img src="images/monofab-setup64.png" alt="Contenido de la carpeta WIN10X64 con el archivo SETUP64 seleccionado"></a></div>
+              <div class="step-text">
+                <strong>Abrir el instalador (Setup)</strong>
+                <span>Dentro de esa carpeta buscamos el archivo "Setup" (en nuestro caso SETUP64, por ser de 64 bits) y le dimos en "Abrir" para descargarlo.</span>
+              </div>
+            </li>
+            <li id="step-monofab-driver-setup-install">
+              <div class="step-thumb has-img"><a href="images/monofab-driver-setup-install.png" target="_blank"><img src="images/monofab-driver-setup-install.png" alt="Ventana Driver Setup con Install seleccionado, modelo Roland SRM-20 y puerto USB"></a></div>
+              <div class="step-text">
+                <strong>Configurar el Driver Setup</strong>
+                <span>Se abrió la ventana "Driver Setup". Dejamos seleccionado "Install", el modelo "Roland SRM-20" y el puerto en "USB", y le dimos en "Start".</span>
+              </div>
+            </li>
+            <li id="step-monofab-preparando-instalacion">
+              <div class="step-thumb has-img"><a href="images/monofab-preparando-instalacion.png" target="_blank"><img src="images/monofab-preparando-instalacion.png" alt="Ventana Preparing to Install descargando la instalación"></a></div>
+              <div class="step-text">
+                <strong>Preparando la instalación</strong>
+                <span>Después de darle en "Start", apareció esta ventana mostrando que se estaba preparando/descargando la instalación.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-welcome">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-welcome.png" target="_blank"><img src="images/monofab-wizard-welcome.png" alt="Asistente InstallShield Wizard, pantalla de bienvenida"></a></div>
+              <div class="step-text">
+                <strong>Asistente de instalación</strong>
+                <span>Se abrió el "InstallShield Wizard" del driver de Roland SRM-20. Le dimos en "Next".</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-modify">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-modify.png" target="_blank"><img src="images/monofab-wizard-modify.png" alt="Program Maintenance con la opción Modify seleccionada"></a></div>
+              <div class="step-text">
+                <strong>Program Maintenance</strong>
+                <span>Dejamos seleccionada la opción "Modify" y le dimos en "Next".</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-custom-setup">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-custom-setup.png" target="_blank"><img src="images/monofab-wizard-custom-setup.png" alt="Custom Setup con las características del programa a instalar"></a></div>
+              <div class="step-text">
+                <strong>Selección de características</strong>
+                <span>Apareció la ventana "Custom Setup". Dejamos todo como estaba por defecto y le dimos en "Next" de nuevo.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-ready-install">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-ready-install.png" target="_blank"><img src="images/monofab-wizard-ready-install.png" alt="Ready to Modify the Program con el botón Install"></a></div>
+              <div class="step-text">
+                <strong>Listo para instalar</strong>
+                <span>Le dimos en "Install" para comenzar la instalación.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-completado">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-completado.png" target="_blank"><img src="images/monofab-wizard-completado.png" alt="InstallShield Wizard Completed, instalación terminada"></a></div>
+              <div class="step-text">
+                <strong>Instalación completada</strong>
+                <span>Apareció el mensaje de que la instalación terminó y le dimos en "Finish". Después de esto no se abre ninguna aplicación ni nada más, pero la computadora ya tiene el driver de la MonoFab instalado.</span>
+              </div>
+            </li>
+            <li id="step-monofab-conectar-la-maquina">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Conectar la MonoFab</strong>
+                <span>Ya con el driver instalado, nos fuimos a la MonoFab, conectamos el cable USB a la computadora y automáticamente se abrió la aplicación en la compu.</span>
               </div>
             </li>
           </ul>
