@@ -749,6 +749,7 @@
             <a href="#stage-monofab" class="toc-stage">3. Proceso en MonoFab</a>
             <a href="#grp-monofab-driver" class="toc-sub">Instalación del driver de la MonoFab</a>
             <a href="#grp-monofab-cama-sacrificio" class="toc-sub">Preparación de la cama de sacrificio</a>
+            <a href="#grp-monofab-manejo" class="toc-sub">Manejo de la MonoFab</a>
           </nav>
           <div class="process-main">
 
@@ -1423,7 +1424,7 @@
               </div>
             </li>
             <li id="step-monofab-conectar-la-maquina">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/monofab-vpanel-srm20.png" target="_blank"><img src="images/monofab-vpanel-srm20.png" alt="VPanel para SRM-20 con los controles de posición X, Y, Z y las flechas de movimiento"></a></div>
               <div class="step-text">
                 <strong>Conectar la MonoFab</strong>
                 <span>Ya con el driver instalado, nos fuimos a la MonoFab, conectamos el cable USB a la computadora y automáticamente se abrió la aplicación en la compu.</span>
@@ -1455,7 +1456,7 @@
               <div class="step-thumb">[ imagen pendiente ]</div>
               <div class="step-text">
                 <strong>Pegar la placa a la cama</strong>
-                <span>Una de estas camas va dentro de la MonoFab, y la placa de cobre se pega encima con cinta doble cara, para que quede fija mientras la máquina corta.</span>
+                <span>Una de estas camas va dentro de la MonoFab, y la placa de cobre se pega encima con cinta doble cara, para que quede fija mientras la máquina corta. A la hora de pegarla, es importante que quede lo más derecha posible.</span>
               </div>
             </li>
             <li id="step-monofab-colocar-la-cama-atornillada">
@@ -1463,6 +1464,111 @@
               <div class="step-text">
                 <strong>Colocar la cama en la MonoFab</strong>
                 <span>Así queda la cama, ya con la placa pegada, colocada y atornillada dentro de la MonoFab.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-monofab-manejo">Manejo de la MonoFab</h5>
+          <ul class="step-list">
+            <li id="step-monofab-como-se-mueve">
+              <div class="step-thumb has-img"><a href="images/monofab-vpanel-srm20.png" target="_blank"><img src="images/monofab-vpanel-srm20.png" alt="VPanel para SRM-20 con los controles de posición X, Y, Z y las flechas de movimiento"></a></div>
+              <div class="step-text">
+                <strong>Cómo se mueve la MonoFab</strong>
+                <span>Primero se cierra la máquina. Ya cerrada, empezamos a movernos con las flechas de X y Y, y con la otra columna de flechas movemos Z.</span>
+                <span>En "Cursor Step" eliges qué tanto se va a mover cada vez que presionas una flecha: tienes "Continue", "x100", "x10" y "x1", en ese orden cada vez más preciso y lento. Seleccionas el que necesites y luego usas las flechas de X y Y.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-origen-xy">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Fijar el origen en X/Y</strong>
+                <span>Con las flechas nos vamos lo más posible hacia la esquina de abajo a la derecha de la placa de cobre. Ya ahí, en "Set Origin Point", con "User Coordinate System" seleccionado, le dimos en "X/Y" para fijar el origen en esos ejes.</span>
+              </div>
+            </li>
+            <li id="step-monofab-colocar-la-broca">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Colocar la broca</strong>
+                <span>Antes de fijar el origen en Z, hay que colocar en la máquina la broca que vamos a usar. El orden en el que se corta es: primero Perforaciones, después Pistas y al final Contorno; para Perforaciones se usa una fresa de 0.8 mm.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-origen-z">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z</strong>
+                <span>Ya con la broca puesta, en "Spindle" le dimos en "ON" y empezamos a bajarla poco a poco. Mientras más cerca está de la placa, más despacio hay que bajarla, así que vas cambiando el "Cursor Step" conforme te acercas.</span>
+                <span>En el momento en que la broca toca la placa y empieza a salir polvo, le dimos en "OFF" y, tal como con X/Y, fijamos el origen ahí mismo en Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-perforaciones">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Perforaciones</strong>
+                <span>Con todo ya fijado, le dimos clic en "Cut" y agregamos nuestro archivo de Perforaciones (el primero en el orden de corte) con "Add".</span>
+                <span>Después le dimos en "Output": en cuanto le das clic, la máquina empieza a cortar la placa. Solo queda esperar a que termine.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-perforaciones">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Resultado del corte de Perforaciones</strong>
+                <span>Así quedó la placa una vez que la MonoFab terminó de hacer las perforaciones.</span>
+              </div>
+            </li>
+            <li id="step-monofab-broca-pistas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Cambiar la broca para Pistas</strong>
+                <span>Ya terminadas las perforaciones, cambiamos la broca por la que usamos para Pistas: una fresa de 0.4 mm.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-z-pistas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z para Pistas</strong>
+                <span>El origen en X/Y sigue siendo el mismo, porque la placa no se movió; lo único que cambia es Z, ya que la broca es distinta. Repetimos el mismo proceso: en "Spindle" le dimos en "ON", bajamos poco a poco cambiando el "Cursor Step" conforme nos acercábamos, y en cuanto tocó la placa y empezó a salir polvo, le dimos en "OFF" y fijamos el origen ahí en Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-pistas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Pistas</strong>
+                <span>Le dimos clic en "Cut", agregamos nuestro archivo de Pistas con "Add" y después en "Output" para que la máquina empezara a fresar las pistas de cobre.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-pistas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Resultado del corte de Pistas</strong>
+                <span>Así quedó la placa una vez que la MonoFab terminó de fresar las pistas.</span>
+              </div>
+            </li>
+            <li id="step-monofab-broca-contorno">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Cambiar la broca para Contorno</strong>
+                <span>Por último cambiamos la broca por la que usamos para el Contorno: una fresa de 1.9 mm, con la que se corta por completo el borde de la placa.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-z-contorno">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z para Contorno</strong>
+                <span>Otra vez fijamos solo el origen en Z, de la misma manera: "Spindle" en "ON", bajando poco a poco hasta que la broca tocó la placa y salió polvo, y ahí le dimos en "OFF" para fijar Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-contorno">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Contorno</strong>
+                <span>Le dimos clic en "Cut", agregamos nuestro archivo de Contorno con "Add" y por último en "Output" para que la máquina cortara el contorno de la placa.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-contorno">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Resultado del corte de Contorno</strong>
+                <span>Así quedó la placa ya terminada, después de que la MonoFab cortó el contorno y la liberó de la cama de sacrificio.</span>
               </div>
             </li>
           </ul>
