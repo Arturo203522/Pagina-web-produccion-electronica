@@ -532,14 +532,12 @@
   .step-list li.pair .step-thumb-row{order:2;}
   .step-thumb-row{
     display:flex;
+    flex-direction:column;
     gap:16px;
   }
   .step-thumb-row .step-thumb{
     flex:1;
     min-height:280px;
-  }
-  @media (max-width: 760px){
-    .step-thumb-row{flex-direction:column;}
   }
 
   /* ---------- ACORDEÓN DE PRÁCTICAS ---------- */
@@ -1523,7 +1521,7 @@
               </div>
             </li>
             <li id="step-monofab-fijar-z-pistas">
-              <div class="step-thumb has-img"><a href="images/monofab-fijar-z-pistas.png" target="_blank"><img src="images/monofab-fijar-z-pistas.png" alt="VPanel fijando el origen en Z para el corte de Pistas"></a></div>
+              <div class="step-thumb has-img"><a href="images/monofab-fijar-origen-z.png" target="_blank"><img src="images/monofab-fijar-origen-z.png" alt="VPanel bajando el eje Z con Spindle en ON hasta fijar el origen"></a></div>
               <div class="step-text">
                 <strong>Fijar el origen en Z para Pistas</strong>
                 <span>El origen en X/Y sigue siendo el mismo, porque la placa no se movió; lo único que cambia es Z, ya que la broca es distinta. Repetimos el mismo proceso: en "Spindle" le dimos en "ON", bajamos poco a poco cambiando el "Cursor Step" conforme nos acercábamos, y en cuanto tocó la placa y empezó a salir polvo, le dimos en "OFF" y fijamos el origen ahí en Z.</span>
