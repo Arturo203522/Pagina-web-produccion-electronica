@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceso en Mods — Producción Electrónica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="site-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Producción Electrónica</a>
+    <span class="brand-sub">Ingeniería Mecatrónica · Ibero Puebla</span>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <details class="sidebar-group" open>
+        <summary>Práctica 1</summary>
+        <div class="sidebar-subnav">
+          <a href="kicad.html">KiCad</a>
+          <a href="mods.html" class="active">Mods</a>
+          <a href="monofab.html">MonoFab</a>
+        </div>
+      </details>
+      <div class="sidebar-group-disabled">Práctica 2</div>
+    </nav>
+  </aside>
+
+  <div class="site-main">
+
+<div class="tool-page-header">
+  <div class="kicker">Práctica 1 · Paso 2 de 3</div>
+  <h1>Proceso en Mods</h1>
+  <p>Preparación de los archivos SVG en Inkscape y configuración del fresado del Contorno, las Pistas y los Cortes en Mods, listos para mandarlos a la MonoFab.</p>
+  <div class="page-toc">
+    <a href="#grp-mods-preparar-inkscape">Preparar archivos en Inkscape</a>
+    <a href="#grp-mods-corte-contorno">Corte del Contorno</a>
+    <a href="#grp-mods-fresado-pistas">Fresado de Pistas</a>
+    <a href="#grp-mods-perforacion-cortes">Perforación de Cortes</a>
+  </div>
+</div>
+
+<div class="tool-page-body">
+
+          <a class="step-link-callout" href="https://modsproject.org/" target="_blank">https://modsproject.org/</a>
+          <p class="stage-intro">Mods es una herramienta web modular que convierte archivos de diseño en códigos de control para máquinas de fabricación digital, como fresadoras CNC.</p>
+          <h5 class="step-group-title" id="grp-mods-preparar-inkscape">Preparar los archivos en Inkscape</h5>
+          <ul class="step-list">
+            <li id="step-mods-instalar-inkscape">
+              <div class="step-thumb has-img"><a href="images/inkscape-descargar.png" target="_blank"><img src="images/inkscape-descargar.png" alt="Página oficial de descarga de Inkscape App con los botones de Windows, Mac y Linux"></a></div>
+              <div class="step-text">
+                <strong>Instalar Inkscape</strong>
+                <a class="step-link-callout" href="https://inkscape.app/es/descargar/" target="_blank">https://inkscape.app/es/descargar/</a>
+                <span>Ese link lleva a la página oficial de descarga de Inkscape. Lo necesitamos porque los archivos que exportamos de KiCad (Contorno, Pistas y Cortes) hay que ajustarlos antes de cargarlos a Mods, y Inkscape es la herramienta que usamos para editar esos archivos vectoriales (SVG). Hay que instalarlo según el sistema operativo de cada quien (Windows, Mac o Linux).</span>
+              </div>
+            </li>
+            <li id="step-mods-abrir-y-ajustar-el-contorno" class="pair">
+              <div class="step-text">
+                <strong>Abrir y ajustar el Contorno</strong>
+                <span>Ya instalado Inkscape, se abrió esta interfaz vacía. Ahí abrimos el archivo SVG que antes habíamos nombrado como Contorno.</span>
+                <span>Como se ve en la segunda imagen, la figura se salía del límite de la hoja. Para ajustarlo, lo seleccionamos y lo movimos o achicamos con las flechas negras que aparecen en las esquinas y los lados del cuadro de selección, hasta que quedó como en la tercera imagen: dentro del límite de la hoja, pero rozándolo justo.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/inkscape-interfaz-vacia.png" target="_blank"><img src="images/inkscape-interfaz-vacia.png" alt="Interfaz vacía de Inkscape recién abierta, sin ningún objeto"></a></div>
+                <div class="step-thumb has-img"><a href="images/inkscape-contorno-fuera-de-limite.png" target="_blank"><img src="images/inkscape-contorno-fuera-de-limite.png" alt="Archivo Contorno.svg abierto en Inkscape, saliéndose del límite de la hoja"></a></div>
+              </div>
+            </li>
+            <li id="step-mods-contorno-ajustado-al-limite">
+              <div class="step-thumb has-img"><a href="images/inkscape-contorno-ajustado.png" target="_blank"><img src="images/inkscape-contorno-ajustado.png" alt="Contorno ya ajustado dentro del límite de la hoja, rozándolo justo"></a></div>
+              <div class="step-text">
+                <strong>Contorno ajustado al límite</strong>
+                <span>Así quedó el Contorno, ya ajustado dentro del límite de la hoja.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-corte-contorno">Configurar el corte del Contorno</h5>
+          <ul class="step-list">
+            <li id="step-mods-buscar-y-seleccionar-el-programa">
+              <div class="step-thumb has-img"><a href="images/mods-buscar-programa.png" target="_blank"><img src="images/mods-buscar-programa.png" alt="Búsqueda de SRM en Programas de Mods y selección de mill 2D PCB"></a></div>
+              <div class="step-text">
+                <strong>Buscar y seleccionar el programa</strong>
+                <span>Ya dentro de Mods, en "Programas" (arriba a la izquierda) escribimos SRM y seleccionamos la opción "mill 2D PCB".</span>
+              </div>
+            </li>
+            <li id="step-mods-cargar-el-archivo-del-contorno">
+              <div class="step-thumb has-img"><a href="images/mods-cargar-svg.png" target="_blank"><img src="images/mods-cargar-svg.png" alt="Carga del archivo Contorno.svg con select SVG file"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo del Contorno</strong>
+                <span>Con "select svg file" cargamos el archivo que habíamos guardado como Contorno.</span>
+              </div>
+            </li>
+            <li id="step-mods-ajustar-el-corte-y-el-diametro-de-herramienta" class="pair">
+              <div class="step-text">
+                <strong>Ajustar el corte y el diámetro de herramienta</strong>
+                <span>Activamos las unidades en milímetros y dejamos el valor de corte (cutout) en 1.59; en la configuración de la fresa cambiamos el diámetro a 1.9 mm y le dimos en "calculate".</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/mods-cutout-mm.png" target="_blank"><img src="images/mods-cutout-mm.png" alt="Configuración de unidades en milímetros y cutout de 1.59mm"></a></div>
+                <div class="step-thumb has-img"><a href="images/mods-tool-diameter.png" target="_blank"><img src="images/mods-tool-diameter.png" alt="Diámetro de herramienta en 1.9mm y botón calculate"></a></div>
+              </div>
+            </li>
+            <li id="step-mods-vista-previa-del-corte">
+              <div class="step-thumb has-img"><a href="images/mods-vista-previa-corte.png" target="_blank"><img src="images/mods-vista-previa-corte.png" alt="Vista previa 3D del corte sobre la placa"></a></div>
+              <div class="step-text">
+                <strong>Vista previa del corte</strong>
+                <span>Se abrió una vista previa en 3D de cómo quedaría el corte sobre la placa.</span>
+              </div>
+            </li>
+            <li id="step-mods-configurar-el-origen-y-la-velocidad">
+              <div class="step-thumb has-img"><a href="images/mods-origen-velocidad.png" target="_blank"><img src="images/mods-origen-velocidad.png" alt="Configuración de origen en X Y Z y velocidad de 4mm por segundo"></a></div>
+              <div class="step-text">
+                <strong>Configurar el origen y la velocidad</strong>
+                <span>Pusimos en 0 los valores de X, Y y Z para que el corte empezara desde el origen, y verificamos que la velocidad quedara en 4 mm/s.</span>
+              </div>
+            </li>
+            <li id="step-mods-guardar-el-archivo" class="pair">
+              <div class="step-text">
+                <strong>Guardar el archivo</strong>
+                <span>Por último le dimos en "save file", lo guardamos con el mismo nombre (Contorno) y, al abrir ese archivo, vimos que es puro código: lo que la fresadora necesita para hacer el corte.</span>
+                <span>Así se ve el archivo ya guardado en nuestra carpeta del proyecto: "Contorno.rml".</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/mods-guardar-archivo.png" target="_blank"><img src="images/mods-guardar-archivo.png" alt="Guardado del archivo de código Contorno desde Mods"></a></div>
+                <div class="step-thumb has-img"><a href="images/mods-contorno-rml-carpeta.png" target="_blank"><img src="images/mods-contorno-rml-carpeta.png" alt="Archivo Contorno.rml ya guardado en la carpeta del proyecto"></a></div>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-fresado-pistas">Configurar el fresado de Pistas</h5>
+          <ul class="step-list">
+            <li id="step-mods-cargar-el-archivo-de-pistas-e-invertir">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-cargar-svg.png" target="_blank"><img src="images/mods-pistas-cargar-svg.png" alt="Carga del archivo de Pistas con invert activado"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo de Pistas e invertir</strong>
+                <span>Hicimos lo mismo que con el Contorno: en el mismo lugar, con "select svg file", cargamos el archivo que habíamos guardado como Pistas, y esta vez activamos "invert" para invertir la imagen.</span>
+              </div>
+            </li>
+            <li id="step-mods-ajustar-unidades-y-ancho-de-pista">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-trazas-mm.png" target="_blank"><img src="images/mods-pistas-trazas-mm.png" alt="Unidades en milímetros y traza de 0.40mm seleccionada"></a></div>
+              <div class="step-text">
+                <strong>Ajustar unidades y ancho de pista</strong>
+                <span>Cambiamos las unidades a milímetros y, en Traces, seleccionamos la opción de 0.4 mm.</span>
+              </div>
+            </li>
+            <li id="step-mods-configurar-el-offset-y-calcular">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-offset-calculate.png" target="_blank"><img src="images/mods-pistas-offset-calculate.png" alt="Offset number en 2 y botón calculate resaltado para las Pistas"></a></div>
+              <div class="step-text">
+                <strong>Configurar el offset y calcular</strong>
+                <span>Cambiamos el offset number a 2 y le dimos en "calculate", lo que abrió la ventana con la vista previa del corte.</span>
+              </div>
+            </li>
+            <li id="step-mods-vista-previa-del-corte-pistas">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-vista-previa.png" target="_blank"><img src="images/mods-pistas-vista-previa.png" alt="Vista previa 3D de las pistas sobre la placa"></a></div>
+              <div class="step-text">
+                <strong>Vista previa del corte</strong>
+                <span>Se abrió una vista previa en 3D de cómo quedaría el fresado de las Pistas sobre la placa.</span>
+              </div>
+            </li>
+            <li id="step-mods-configurar-el-origen">
+              <div class="step-thumb has-img"><a href="images/mods-pistas-origen-velocidad.png" target="_blank"><img src="images/mods-pistas-origen-velocidad.png" alt="Origen en X, Y, Z y velocidad configurados para Pistas"></a></div>
+              <div class="step-text">
+                <strong>Configurar el origen</strong>
+                <span>Cambiamos los valores de X, Y y Z a 0 para que el corte empezara desde el origen.</span>
+              </div>
+            </li>
+            <li id="step-mods-guardar-el-archivo-de-pistas" class="pair">
+              <div class="step-text">
+                <strong>Guardar el archivo de Pistas</strong>
+                <span>Le dimos en "save file" y lo guardamos con el nombre Pistas.</span>
+                <span>Así se ve el archivo ya guardado en nuestra carpeta del proyecto.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/mods-pistas-guardar-archivo.png" target="_blank"><img src="images/mods-pistas-guardar-archivo.png" alt="Guardado del archivo de código Pistas desde Mods"></a></div>
+                <div class="step-thumb has-img"><a href="images/mods-pistas-archivo-carpeta.png" target="_blank"><img src="images/mods-pistas-archivo-carpeta.png" alt="Archivo Pistas ya guardado en la carpeta del proyecto"></a></div>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-mods-perforacion-cortes">Configurar la perforación de Cortes</h5>
+          <ul class="step-list">
+            <li id="step-mods-cargar-el-archivo-de-cortes">
+              <div class="step-thumb has-img"><a href="images/mods-cortes-cargar-svg.png" target="_blank"><img src="images/mods-cortes-cargar-svg.png" alt="Carga del archivo Perforaciones.svg en Mods"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo de Cortes</strong>
+                <span>Repetimos el mismo proceso con el archivo de la capa de usuario que usamos para los cortes de alimentación y salidas: lo agregamos con "select svg file".</span>
+              </div>
+            </li>
+            <li id="step-mods-ajustar-unidades-y-calcular">
+              <div class="step-thumb has-img"><a href="images/mods-cortes-drill-mm.png" target="_blank"><img src="images/mods-cortes-drill-mm.png" alt="Diámetro de herramienta 0.79mm y botón calculate"></a></div>
+              <div class="step-text">
+                <strong>Ajustar unidades y calcular</strong>
+                <span>Cambiamos las unidades a milímetros, seleccionamos la opción de 0.79 mm y le dimos en "calculate".</span>
+              </div>
+            </li>
+            <li id="step-mods-vista-previa-del-corte-cortes">
+              <div class="step-thumb has-img"><a href="images/mods-cortes-vista-previa.png" target="_blank"><img src="images/mods-cortes-vista-previa.png" alt="Vista previa 3D de los orificios de Cortes sobre la placa"></a></div>
+              <div class="step-text">
+                <strong>Vista previa del corte</strong>
+                <span>Se abrió una vista previa en 3D de cómo quedarían los orificios de alimentación y salidas sobre la placa.</span>
+              </div>
+            </li>
+            <li id="step-mods-configurar-origen-y-velocidad">
+              <div class="step-thumb has-img"><a href="images/mods-cortes-origen-velocidad.png" target="_blank"><img src="images/mods-cortes-origen-velocidad.png" alt="Origen en X, Y, Z y velocidad de 0.3 mm/s para Cortes"></a></div>
+              <div class="step-text">
+                <strong>Configurar origen y velocidad</strong>
+                <span>Cambiamos los valores de X y Z a 0, y ajustamos la velocidad a 0.3 mm/s.</span>
+              </div>
+            </li>
+            <li id="step-mods-guardar-el-archivo-de-cortes" class="pair">
+              <div class="step-text">
+                <strong>Guardar el archivo de Cortes</strong>
+                <span>Le dimos en "save file" y lo guardamos con el nombre Cortes.</span>
+                <span>Así se ve el archivo Perforaciones.rml ya guardado en nuestra carpeta del proyecto.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/mods-cortes-guardar-archivo.png" target="_blank"><img src="images/mods-cortes-guardar-archivo.png" alt="Guardado del archivo de código Cortes desde Mods"></a></div>
+                <div class="step-thumb has-img"><a href="images/mods-cortes-archivo-carpeta.png" target="_blank"><img src="images/mods-cortes-archivo-carpeta.png" alt="Archivo Perforaciones.rml ya guardado en la carpeta del proyecto"></a></div>
+              </div>
+            </li>
+          </ul>
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>

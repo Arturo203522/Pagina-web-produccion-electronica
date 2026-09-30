@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceso en MonoFab — Producción Electrónica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="site-shell">
+  <aside class="sidebar">
+    <a href="index.html" class="brand">Producción Electrónica</a>
+    <span class="brand-sub">Ingeniería Mecatrónica · Ibero Puebla</span>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <details class="sidebar-group" open>
+        <summary>Práctica 1</summary>
+        <div class="sidebar-subnav">
+          <a href="kicad.html">KiCad</a>
+          <a href="mods.html">Mods</a>
+          <a href="monofab.html" class="active">MonoFab</a>
+        </div>
+      </details>
+      <div class="sidebar-group-disabled">Práctica 2</div>
+    </nav>
+  </aside>
+
+  <div class="site-main">
+
+<div class="tool-page-header">
+  <div class="kicker">Práctica 1 · Paso 3 de 3</div>
+  <h1>Proceso en MonoFab</h1>
+  <p>Instalación del driver, preparación de la cama de sacrificio y manejo de la fresadora Roland SRM-20 para fabricar físicamente la placa.</p>
+  <div class="page-toc">
+    <a href="#grp-monofab-driver">Instalación del driver</a>
+    <a href="#grp-monofab-cama-sacrificio">Cama de sacrificio</a>
+    <a href="#grp-monofab-manejo">Manejo de la MonoFab</a>
+  </div>
+</div>
+
+<div class="tool-page-body">
+
+          <p class="stage-intro">La MonoFab SRM-20 es una fresadora CNC de escritorio de Roland, pensada para prototipado rápido. Es la máquina física que corta y graba la placa: con los archivos de código que generamos en Mods (Contorno, Pistas y Cortes), la fresa se mueve automáticamente y va tallando sobre la placa fenólica las pistas de cobre, los orificios y el contorno que diseñamos en KiCad, hasta dejar la PCB físicamente terminada.</p>
+
+          <h5 class="step-group-title" id="grp-monofab-driver">Instalación del driver de la MonoFab</h5>
+          <ul class="step-list">
+            <li id="step-monofab-acceder-a-la-carpeta-en-sharepoint">
+              <div class="step-thumb has-img"><a href="images/monofab-sharepoint-carpeta.png" target="_blank"><img src="images/monofab-sharepoint-carpeta.png" alt="Carpeta monoFab_Driver en SharePoint, dentro del sitio de Fab Academy P24"></a></div>
+              <div class="step-text">
+                <strong>Acceder a la carpeta en SharePoint</strong>
+                <a class="step-link-callout" href="https://iberopuebla.sharepoint.com/sites/FabAcademyP24108/Documentos%20compartidos/Forms/AllItems.aspx?id=%2Fsites%2FFabAcademyP24108%2FDocumentos%20compartidos%2FGeneral%2FmonoFab%5FDriver&p=true&ga=1" target="_blank">Fab Academy P24 · monoFab_Driver</a>
+                <span>Ese link lleva a la carpeta compartida en SharePoint donde está el driver. Ahí aparece la carpeta "monofabDriver_V180"; le dimos clic para entrar.</span>
+              </div>
+            </li>
+            <li id="step-monofab-descargar-la-carpeta">
+              <div class="step-thumb has-img"><a href="images/monofab-sharepoint-descargar.png" target="_blank"><img src="images/monofab-sharepoint-descargar.png" alt="Menú de opciones en SharePoint con la opción Descargar resaltada"></a></div>
+              <div class="step-text">
+                <strong>Descargar la carpeta</strong>
+                <span>Le dimos clic derecho a la carpeta y seleccionamos "Descargar".</span>
+              </div>
+            </li>
+            <li id="step-monofab-abrir-la-carpeta">
+              <div class="step-thumb has-img"><a href="images/monofab-carpeta-driver.png" target="_blank"><img src="images/monofab-carpeta-driver.png" alt="Ventana Abrir con la carpeta monofabDriver_V180 dentro de Descargas"></a></div>
+              <div class="step-text">
+                <strong>Abrir la carpeta</strong>
+                <span>Ya descargada, la buscamos en "Descargas" y abrimos la carpeta "monofabDriver_V180".</span>
+              </div>
+            </li>
+            <li id="step-monofab-elegir-la-carpeta-del-sistema-operativo">
+              <div class="step-thumb has-img"><a href="images/monofab-carpeta-sistema-operativo.png" target="_blank"><img src="images/monofab-carpeta-sistema-operativo.png" alt="Carpetas del driver según el sistema operativo: WIN7X64, WIN7X86, WIN8X64, WIN8X86, WIN10X64, WIN10X86"></a></div>
+              <div class="step-text">
+                <strong>Elegir la carpeta de tu sistema operativo</strong>
+                <span>Dentro de la carpeta del driver hay una subcarpeta para cada sistema operativo. Nosotros instalamos la de WIN10X64, pero esto depende de cada quien, según la versión de Windows y si es de 32 o 64 bits.</span>
+              </div>
+            </li>
+            <li id="step-monofab-abrir-setup">
+              <div class="step-thumb has-img"><a href="images/monofab-setup64.png" target="_blank"><img src="images/monofab-setup64.png" alt="Contenido de la carpeta WIN10X64 con el archivo SETUP64 seleccionado"></a></div>
+              <div class="step-text">
+                <strong>Abrir el instalador (Setup)</strong>
+                <span>Dentro de esa carpeta buscamos el archivo "Setup" (en nuestro caso SETUP64, por ser de 64 bits) y le dimos en "Abrir" para descargarlo.</span>
+              </div>
+            </li>
+            <li id="step-monofab-driver-setup-install">
+              <div class="step-thumb has-img"><a href="images/monofab-driver-setup-install.png" target="_blank"><img src="images/monofab-driver-setup-install.png" alt="Ventana Driver Setup con Install seleccionado, modelo Roland SRM-20 y puerto USB"></a></div>
+              <div class="step-text">
+                <strong>Configurar el Driver Setup</strong>
+                <span>Se abrió la ventana "Driver Setup". Dejamos seleccionado "Install", el modelo "Roland SRM-20" y el puerto en "USB", y le dimos en "Start".</span>
+              </div>
+            </li>
+            <li id="step-monofab-preparando-instalacion">
+              <div class="step-thumb has-img"><a href="images/monofab-preparando-instalacion.png" target="_blank"><img src="images/monofab-preparando-instalacion.png" alt="Ventana Preparing to Install descargando la instalación"></a></div>
+              <div class="step-text">
+                <strong>Preparando la instalación</strong>
+                <span>Después de darle en "Start", apareció esta ventana mostrando que se estaba preparando/descargando la instalación.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-welcome">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-welcome.png" target="_blank"><img src="images/monofab-wizard-welcome.png" alt="Asistente InstallShield Wizard, pantalla de bienvenida"></a></div>
+              <div class="step-text">
+                <strong>Asistente de instalación</strong>
+                <span>Se abrió el "InstallShield Wizard" del driver de Roland SRM-20. Le dimos en "Next".</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-modify">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-modify.png" target="_blank"><img src="images/monofab-wizard-modify.png" alt="Program Maintenance con la opción Modify seleccionada"></a></div>
+              <div class="step-text">
+                <strong>Program Maintenance</strong>
+                <span>Dejamos seleccionada la opción "Modify" y le dimos en "Next".</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-custom-setup">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-custom-setup.png" target="_blank"><img src="images/monofab-wizard-custom-setup.png" alt="Custom Setup con las características del programa a instalar"></a></div>
+              <div class="step-text">
+                <strong>Selección de características</strong>
+                <span>Apareció la ventana "Custom Setup". Dejamos todo como estaba por defecto y le dimos en "Next" de nuevo.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-ready-install">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-ready-install.png" target="_blank"><img src="images/monofab-wizard-ready-install.png" alt="Ready to Modify the Program con el botón Install"></a></div>
+              <div class="step-text">
+                <strong>Listo para instalar</strong>
+                <span>Le dimos en "Install" para comenzar la instalación.</span>
+              </div>
+            </li>
+            <li id="step-monofab-wizard-completado">
+              <div class="step-thumb has-img"><a href="images/monofab-wizard-completado.png" target="_blank"><img src="images/monofab-wizard-completado.png" alt="InstallShield Wizard Completed, instalación terminada"></a></div>
+              <div class="step-text">
+                <strong>Instalación completada</strong>
+                <span>Apareció el mensaje de que la instalación terminó y le dimos en "Finish". Después de esto no se abre ninguna aplicación ni nada más, pero la computadora ya tiene el driver de la MonoFab instalado.</span>
+              </div>
+            </li>
+            <li id="step-monofab-conectar-la-maquina">
+              <div class="step-thumb has-img"><a href="images/monofab-vpanel-srm20.png" target="_blank"><img src="images/monofab-vpanel-srm20.png" alt="VPanel para SRM-20 con los controles de posición X, Y, Z y las flechas de movimiento"></a></div>
+              <div class="step-text">
+                <strong>Conectar la MonoFab</strong>
+                <span>Ya con el driver instalado, nos fuimos a la MonoFab, conectamos el cable USB a la computadora y automáticamente se abrió la aplicación en la compu.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-monofab-cama-sacrificio">Preparación de la cama de sacrificio</h5>
+          <ul class="step-list">
+            <li id="step-monofab-cortar-la-cama-de-sacrificio" class="pair">
+              <div class="step-text">
+                <strong>Cortar la cama de sacrificio</strong>
+                <span>Antes de meter la placa de cobre a la MonoFab, hay que preparar una "cama de sacrificio": una base de MDF sobre la que se pega la placa para poder cortarla sin dañar la superficie de la máquina. Para eso usamos el archivo "Sacrificio_SS.dxf", que es justo lo que la cortadora de MDF va a ver y cortar.</span>
+                <span>Así se ve el archivo abierto: son 4 camas iguales, cada una con sus orificios de referencia. Simplemente metimos este archivo a una cortadora de MDF y listo.</span>
+              </div>
+              <div class="step-thumb-row">
+                <div class="step-thumb has-img"><a href="images/monofab-cama-sacrificio-dxf.png" target="_blank"><img src="images/monofab-cama-sacrificio-dxf.png" alt="Archivo Sacrificio SS.dxf encontrado en la carpeta Descargas"></a></div>
+                <div class="step-thumb has-img"><a href="images/monofab-cama-sacrificio-vista-maquina.png" target="_blank"><img src="images/monofab-cama-sacrificio-vista-maquina.png" alt="Archivo Sacrificio_SS.dxf abierto en eDrawings, con 4 camas rectangulares y sus orificios de referencia"></a></div>
+              </div>
+            </li>
+            <li id="step-monofab-camas-ya-cortadas">
+              <div class="step-thumb has-img"><a href="images/monofab-camas-cortadas.png" target="_blank"><img src="images/monofab-camas-cortadas.png" alt="Camas de sacrificio ya cortadas en MDF"></a></div>
+              <div class="step-text">
+                <strong>Camas ya cortadas</strong>
+                <span>Así se ven las camas de sacrificio ya cortadas en MDF, listas para usarse.</span>
+              </div>
+            </li>
+            <li id="step-monofab-pegar-la-placa-a-la-cama">
+              <div class="step-thumb has-img"><a href="images/monofab-placa-pegada-cama.png" target="_blank"><img src="images/monofab-placa-pegada-cama.png" alt="Placa de cobre pegada con cinta doble cara sobre la cama de sacrificio"></a></div>
+              <div class="step-text">
+                <strong>Pegar la placa a la cama</strong>
+                <span>Una de estas camas va dentro de la MonoFab, y la placa de cobre se pega encima con cinta doble cara, para que quede fija mientras la máquina corta. A la hora de pegarla, es importante que quede lo más derecha posible.</span>
+              </div>
+            </li>
+            <li id="step-monofab-colocar-la-cama-atornillada">
+              <div class="step-thumb has-img"><a href="images/monofab-cama-atornillada.png" target="_blank"><img src="images/monofab-cama-atornillada.png" alt="Cama de sacrificio colocada y atornillada dentro de la MonoFab"></a></div>
+              <div class="step-text">
+                <strong>Colocar la cama en la MonoFab</strong>
+                <span>Así queda la cama, ya con la placa pegada, colocada y atornillada dentro de la MonoFab.</span>
+              </div>
+            </li>
+          </ul>
+
+          <h5 class="step-group-title" id="grp-monofab-manejo">Manejo de la MonoFab</h5>
+          <ul class="step-list">
+            <li id="step-monofab-como-se-mueve">
+              <div class="step-thumb has-img"><a href="images/monofab-vpanel-srm20.png" target="_blank"><img src="images/monofab-vpanel-srm20.png" alt="VPanel para SRM-20 con los controles de posición X, Y, Z y las flechas de movimiento"></a></div>
+              <div class="step-text">
+                <strong>Cómo se mueve la MonoFab</strong>
+                <span>Primero se cierra la máquina. Ya cerrada, empezamos a movernos con las flechas de X y Y, y con la otra columna de flechas movemos Z.</span>
+                <span>En "Cursor Step" eliges qué tanto se va a mover cada vez que presionas una flecha: tienes "Continue", "x100", "x10" y "x1", en ese orden cada vez más preciso y lento. Seleccionas el que necesites y luego usas las flechas de X y Y.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-origen-xy">
+              <div class="step-thumb has-img"><a href="images/monofab-fijar-origen-xy.png" target="_blank"><img src="images/monofab-fijar-origen-xy.png" alt="VPanel fijando el origen en X/Y en la esquina de la placa"></a></div>
+              <div class="step-text">
+                <strong>Fijar el origen en X/Y</strong>
+                <span>Con las flechas nos vamos lo más posible hacia la esquina de abajo a la derecha de la placa de cobre. Ya ahí, en "Set Origin Point", con "User Coordinate System" seleccionado, le dimos en "X/Y" para fijar el origen en esos ejes.</span>
+              </div>
+            </li>
+            <li id="step-monofab-colocar-la-broca">
+              <div class="step-thumb has-img"><a href="images/monofab-colocar-broca.png" target="_blank"><img src="images/monofab-colocar-broca.png" alt="Broca colocada en el cabezal de la MonoFab"></a></div>
+              <div class="step-text">
+                <strong>Colocar la broca</strong>
+                <span>Antes de fijar el origen en Z, hay que colocar en la máquina la broca que vamos a usar. El orden en el que se corta es: primero Perforaciones, después Pistas y al final Contorno; para Perforaciones se usa una fresa de 0.8 mm.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-origen-z">
+              <div class="step-thumb has-img"><a href="images/monofab-fijar-origen-z.png" target="_blank"><img src="images/monofab-fijar-origen-z.png" alt="VPanel bajando el eje Z con Spindle en ON hasta fijar el origen"></a></div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z</strong>
+                <span>Ya con la broca puesta, en "Spindle" le dimos en "ON" y empezamos a bajarla poco a poco. Mientras más cerca está de la placa, más despacio hay que bajarla, así que vas cambiando el "Cursor Step" conforme te acercas.</span>
+                <span>En el momento en que la broca toca la placa y empieza a salir polvo, le dimos en "OFF" y, tal como con X/Y, fijamos el origen ahí mismo en Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-perforaciones">
+              <div class="step-thumb has-img"><a href="images/monofab-cargar-cortar-perforaciones.png" target="_blank"><img src="images/monofab-cargar-cortar-perforaciones.png" alt="Ventana Cut con el archivo de Perforaciones agregado antes de dar Output"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Perforaciones</strong>
+                <span>Con todo ya fijado, le dimos clic en "Cut" y agregamos nuestro archivo de Perforaciones (el primero en el orden de corte) con "Add".</span>
+                <span>Después le dimos en "Output": en cuanto le das clic, la máquina empieza a cortar la placa. Solo queda esperar a que termine.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-perforaciones">
+              <div class="step-thumb has-img"><a href="images/monofab-resultado-perforaciones.png" target="_blank"><img src="images/monofab-resultado-perforaciones.png" alt="Placa con las perforaciones ya cortadas por la MonoFab"></a></div>
+              <div class="step-text">
+                <strong>Resultado del corte de Perforaciones</strong>
+                <span>Así quedó la placa una vez que la MonoFab terminó de hacer las perforaciones.</span>
+              </div>
+            </li>
+            <li id="step-monofab-broca-pistas">
+              <div class="step-thumb has-img"><a href="images/monofab-broca-pistas.png" target="_blank"><img src="images/monofab-broca-pistas.png" alt="Broca de 0.4 mm colocada para cortar las Pistas"></a></div>
+              <div class="step-text">
+                <strong>Cambiar la broca para Pistas</strong>
+                <span>Ya terminadas las perforaciones, cambiamos la broca por la que usamos para Pistas: una fresa de 0.4 mm.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-z-pistas">
+              <div class="step-thumb has-img"><a href="images/monofab-fijar-origen-z.png" target="_blank"><img src="images/monofab-fijar-origen-z.png" alt="VPanel bajando el eje Z con Spindle en ON hasta fijar el origen"></a></div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z para Pistas</strong>
+                <span>El origen en X/Y sigue siendo el mismo, porque la placa no se movió; lo único que cambia es Z, ya que la broca es distinta. Repetimos el mismo proceso: en "Spindle" le dimos en "ON", bajamos poco a poco cambiando el "Cursor Step" conforme nos acercábamos, y en cuanto tocó la placa y empezó a salir polvo, le dimos en "OFF" y fijamos el origen ahí en Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-pistas">
+              <div class="step-thumb has-img"><a href="images/monofab-cargar-cortar-pistas.png" target="_blank"><img src="images/monofab-cargar-cortar-pistas.png" alt="Ventana Cut con el archivo de Pistas agregado antes de dar Output"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Pistas</strong>
+                <span>Le dimos clic en "Cut", agregamos nuestro archivo de Pistas con "Add" y después en "Output" para que la máquina empezara a fresar las pistas de cobre.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-pistas">
+              <div class="step-thumb has-img"><a href="images/monofab-resultado-pistas.png" target="_blank"><img src="images/monofab-resultado-pistas.png" alt="Placa con las pistas ya fresadas por la MonoFab"></a></div>
+              <div class="step-text">
+                <strong>Resultado del corte de Pistas</strong>
+                <span>Así quedó la placa una vez que la MonoFab terminó de fresar las pistas.</span>
+              </div>
+            </li>
+            <li id="step-monofab-broca-contorno">
+              <div class="step-thumb has-img"><a href="images/monofab-broca-contorno.png" target="_blank"><img src="images/monofab-broca-contorno.png" alt="Broca de 1.9 mm colocada para cortar el Contorno"></a></div>
+              <div class="step-text">
+                <strong>Cambiar la broca para Contorno</strong>
+                <span>Por último cambiamos la broca por la que usamos para el Contorno: una fresa de 1.9 mm, con la que se corta por completo el borde de la placa.</span>
+              </div>
+            </li>
+            <li id="step-monofab-fijar-z-contorno">
+              <div class="step-thumb has-img"><a href="images/monofab-fijar-origen-z.png" target="_blank"><img src="images/monofab-fijar-origen-z.png" alt="VPanel bajando el eje Z con Spindle en ON hasta fijar el origen"></a></div>
+              <div class="step-text">
+                <strong>Fijar el origen en Z para Contorno</strong>
+                <span>Otra vez fijamos solo el origen en Z, de la misma manera: "Spindle" en "ON", bajando poco a poco hasta que la broca tocó la placa y salió polvo, y ahí le dimos en "OFF" para fijar Z.</span>
+              </div>
+            </li>
+            <li id="step-monofab-cargar-y-cortar-contorno">
+              <div class="step-thumb has-img"><a href="images/monofab-cargar-cortar-contorno.png" target="_blank"><img src="images/monofab-cargar-cortar-contorno.png" alt="Ventana Cut con el archivo Contorno.rml agregado antes de dar Output"></a></div>
+              <div class="step-text">
+                <strong>Cargar el archivo y cortar Contorno</strong>
+                <span>Le dimos clic en "Cut", agregamos nuestro archivo de Contorno con "Add" y por último en "Output" para que la máquina cortara el contorno de la placa.</span>
+              </div>
+            </li>
+            <li id="step-monofab-resultado-contorno">
+              <div class="step-thumb has-img"><a href="images/monofab-resultado-contorno.png" target="_blank"><img src="images/monofab-resultado-contorno.png" alt="Placa PCB terminada, ya cortada y liberada de la cama de sacrificio"></a></div>
+              <div class="step-text">
+                <strong>Resultado del corte de Contorno</strong>
+                <span>Así quedó la placa ya terminada, después de que la MonoFab cortó el contorno y la liberó de la cama de sacrificio.</span>
+              </div>
+            </li>
+          </ul>
+
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>
