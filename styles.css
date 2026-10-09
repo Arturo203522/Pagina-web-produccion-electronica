@@ -837,7 +837,7 @@
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin:0 -40px 24px;
+    margin:0 0 8px;
     padding:14px 40px;
     background:var(--bg);
     border-bottom:1px solid var(--border);
@@ -867,5 +867,5 @@
     .sidebar nav{flex-direction:row; flex-wrap:wrap;}
     .tool-page-header{padding:28px 20px 6px;}
     .tool-page-body{padding:8px 20px 40px;}
-    .page-toc{margin:0 -20px 24px; padding:12px 20px;}
+    .page-toc{margin:0 0 8px; padding:12px 20px;}
   }
