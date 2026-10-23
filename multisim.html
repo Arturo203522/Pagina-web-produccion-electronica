@@ -187,7 +187,7 @@
             </li>
 </ul>
 
-<h5 class="step-group-title" id="grp-multisim-simulacion">Simular y comprobar la función</h5>
+<h5 class="step-group-title" id="grp-multisim-simulacion">Simular con el convertidor lógico</h5>
 <ul class="step-list">
             <li id="step-multisim-convertidor-logico">
               <div class="step-thumb has-img"><a href="images/multisim-convertidor-menu.png" target="_blank"><img src="images/multisim-convertidor-menu.png" alt="Barra de instrumentos de Multisim con el Logic converter señalado"></a></div>
@@ -210,12 +210,20 @@
                 <span>Conectamos el convertidor con los mismos nombres de red que usamos en el circuito: las primeras cuatro terminales a <strong>A, B, C y D</strong> y la terminal de salida a <strong>S</strong>, que es el nombre que le pusimos a la salida del circuito (la que va al indicador X1). Así el convertidor queda unido al circuito sin dibujar cables.</span>
               </div>
             </li>
-            <li id="step-multisim-ejecutar-simulacion">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-tabla-verdad">
+              <div class="step-thumb has-img"><a href="images/multisim-convertidor-tabla.png" target="_blank"><img src="images/multisim-convertidor-tabla.png" alt="Ventana del convertidor lógico con la tabla de verdad y la expresión simplificada"></a></div>
               <div class="step-text">
-                <strong>Ejecutar la simulación</strong>
-                <span>Con el circuito construido, ejecutamos la simulación y cambiamos las entradas entre 0 y 1 para ver cómo cambia la salida.</span>
-                <span>Para verificar bien una función de cuatro variables se prueban todas las combinaciones posibles: como cada variable tiene dos estados, son 2<sup>4</sup> = 16 combinaciones. La salida tiene que coincidir con el resultado esperado de la expresión; así comprobamos que las compuertas están bien conectadas y que el circuito sí representa la función.</span>
+                <strong>Tabla de verdad y expresión</strong>
+                <span>Con doble clic sobre el convertidor se abre su ventana (<em>Logic converter</em>). Ahí aparece la <strong>tabla de verdad</strong> con las combinaciones de las entradas A, B, C y D y una columna con la salida de cada una. Como cada variable tiene dos estados, para cuatro variables son 2<sup>4</sup> = 16 combinaciones.</span>
+                <span>A la derecha están los botones de conversión (<em>Conversions</em>), que permiten pasar de un circuito a una tabla de verdad, de una tabla a una expresión booleana, de una expresión a un circuito, y más. En la captura se usó el de tabla de verdad a expresión simplificada, y el resultado aparece en la barra de abajo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-convertidor-genera-circuito">
+              <div class="step-thumb has-img"><a href="images/multisim-convertidor-circuito.png" target="_blank"><img src="images/multisim-convertidor-circuito.png" alt="Circuito de compuertas generado automáticamente por el convertidor lógico"></a></div>
+              <div class="step-text">
+                <strong>El convertidor genera el circuito</strong>
+                <span>En otra demostración, el profesor borró todos los componentes menos el convertidor y usó una de sus conversiones: el propio convertidor generó en el espacio de trabajo el circuito de compuertas (inversores, AND y OR) que corresponde a la expresión, ya con sus conexiones numeradas.</span>
+                <span>Esto muestra que el convertidor sirve en los dos sentidos: para obtener la tabla y la expresión de un circuito, y para construir un circuito a partir de una expresión o una tabla de verdad. Es una forma de comprobar que un circuito representa la función deseada.</span>
               </div>
             </li>
 </ul>
