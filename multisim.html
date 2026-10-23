@@ -47,6 +47,7 @@
   <a href="#grp-multisim-funcion">Función booleana</a>
   <a href="#grp-multisim-circuito">Circuito lógico</a>
   <a href="#grp-multisim-simulacion">Simulación</a>
+  <a href="#grp-multisim-rc">Circuito RC</a>
   <a href="#grp-multisim-diodos">Diodos</a>
   <a href="#grp-multisim-generador">Generador de funciones</a>
   <a href="#grp-multisim-archivo">Señales desde archivo</a>
@@ -167,7 +168,7 @@
               <div class="step-thumb has-img"><a href="images/multisim-nombre-red.png" target="_blank"><img src="images/multisim-nombre-red.png" alt="Ventana Net Properties con el campo Preferred net name"></a></div>
               <div class="step-text">
                 <strong>Conectar con nombres de red</strong>
-                <span>En lugar de dibujar todos los cables, podemos conectar dos puntos dándoles el mismo nombre. Al abrir las propiedades de la conexión (<em>Net Properties</em>), en el campo <strong>Preferred net name</strong> escribimos el nombre que queremos, por ejemplo A, B, C o D. Todos los puntos con el mismo nombre quedan conectados entre sí, así que cada entrada llega directamente a las compuertas donde se escribió su nombre.</span>
+                <span>En lugar de dibujar todos los cables, podemos conectar dos puntos dándoles el mismo nombre. Al dar <strong>doble clic sobre la línea roja</strong> de la conexión se abre la ventana de propiedades (<em>Net Properties</em>) y, en el campo <strong>Preferred net name</strong> escribimos el nombre que queremos, por ejemplo A, B, C o D. Todos los puntos con el mismo nombre quedan conectados entre sí, así que cada entrada llega directamente a las compuertas donde se escribió su nombre.</span>
                 <span>Esto mantiene el esquemático más limpio y respeta el orden de las operaciones de la expresión: primero lo que está dentro de los paréntesis y después el resultado hacia la siguiente compuerta.</span>
               </div>
             </li>
@@ -224,6 +225,39 @@
                 <strong>El convertidor genera el circuito</strong>
                 <span>En otra demostración, el profesor borró todos los componentes menos el convertidor y usó una de sus conversiones: el propio convertidor generó en el espacio de trabajo el circuito de compuertas (inversores, AND y OR) que corresponde a la expresión, ya con sus conexiones numeradas.</span>
                 <span>Esto muestra que el convertidor sirve en los dos sentidos: para obtener la tabla y la expresión de un circuito, y para construir un circuito a partir de una expresión o una tabla de verdad. Es una forma de comprobar que un circuito representa la función deseada.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-rc">Circuito RC</h5>
+<ul class="step-list">
+            <li id="step-multisim-fuente-dc">
+              <div class="step-thumb has-img"><a href="images/multisim-fuente-dc.png" target="_blank"><img src="images/multisim-fuente-dc.png" alt="Selección de DC_POWER en POWER_SOURCES"></a></div>
+              <div class="step-text">
+                <strong>Colocar la fuente de voltaje</strong>
+                <span>Después, el profesor borró todo y armó un circuito nuevo. Primero la fuente: en <em>Group</em> elegimos <strong>Sources</strong>, en <em>Family</em> <strong>POWER_SOURCES</strong> y el componente <strong>DC_POWER</strong>, una fuente de voltaje de corriente directa. En el circuito la dejamos en 5 V.</span>
+              </div>
+            </li>
+            <li id="step-multisim-tierra">
+              <div class="step-thumb has-img"><a href="images/multisim-tierra.png" target="_blank"><img src="images/multisim-tierra.png" alt="Selección de GROUND en POWER_SOURCES"></a></div>
+              <div class="step-text">
+                <strong>Colocar la tierra</strong>
+                <span>En la misma familia (POWER_SOURCES) está <strong>GROUND</strong>, la tierra analógica. Sirve como referencia de 0 V del circuito, y Multisim la necesita para poder simularlo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-resistencia">
+              <div class="step-thumb has-img"><a href="images/multisim-resistencia.png" target="_blank"><img src="images/multisim-resistencia.png" alt="Selección de una resistencia de 1k en la familia RESISTOR"></a></div>
+              <div class="step-text">
+                <strong>Colocar la resistencia</strong>
+                <span>En <em>Group</em> elegimos <strong>Basic</strong>, en <em>Family</em> <strong>RESISTOR</strong> y en la lista el valor <strong>1k</strong> (1 kΩ). El capacitor se busca igual, en la familia <strong>CAPACITOR</strong> que está justo debajo de RESISTOR; el que usamos es de 1 µF.</span>
+              </div>
+            </li>
+            <li id="step-multisim-circuito-rc">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-rc.png" target="_blank"><img src="images/multisim-circuito-rc.png" alt="Circuito RC con fuente de 5 V, resistencia de 1 kΩ y capacitor de 1 µF"></a></div>
+              <div class="step-text">
+                <strong>Conectar el circuito</strong>
+                <span>Conectamos los componentes en serie: la fuente V1 de 5 V, la resistencia R1 de 1 kΩ y el capacitor C1 de 1 µF, con el otro extremo de la fuente a tierra. Es un circuito RC.</span>
+                <span>Para ponerle nombre a las conexiones se hace como en el circuito lógico: doble clic sobre la línea roja y se escribe el nombre en <em>Preferred net name</em>. Aquí quedaron <strong>1</strong> (después de la fuente), <strong>Vc</strong> (entre la resistencia y el capacitor) y <strong>0</strong> (tierra).</span>
               </div>
             </li>
 </ul>
