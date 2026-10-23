@@ -38,23 +38,184 @@
 
 <div class="tool-page-header">
   <div class="kicker">Práctica 2</div>
-  <h1>Multisim</h1>
-  <p>Práctica 2: trabajo en Multisim, empezando por la instalación del programa.</p>
+  <h1>Proceso en Multisim</h1>
+  <p>Introducción a Multisim: construcción de un circuito con compuertas lógicas a partir de una función booleana, simulación de diodos y uso de señales eléctricas.</p>
+</div>
+
+<div class="page-toc">
+  <a href="#grp-instalacion-multisim">Instalación de Multisim</a>
+  <a href="#grp-multisim-funcion">Función booleana</a>
+  <a href="#grp-multisim-circuito">Circuito lógico</a>
+  <a href="#grp-multisim-simulacion">Simulación</a>
+  <a href="#grp-multisim-diodos">Diodos</a>
+  <a href="#grp-multisim-generador">Generador de funciones</a>
+  <a href="#grp-multisim-archivo">Señales desde archivo</a>
 </div>
 
 <div class="tool-page-body">
 
+<p class="stage-intro">Multisim es un software de NI para el diseño y la simulación de circuitos electrónicos. Permite construir circuitos de forma virtual, analizar su funcionamiento y observar cómo se comportan las señales eléctricas sin armar físicamente el circuito.</p>
+
+<div class="process-intro" style="margin-top:8px;">
+  <h3>Proceso paso a paso</h3>
+  <p>En esta práctica exploramos las herramientas principales del programa: empezamos con una función de álgebra booleana representada con compuertas lógicas y después trabajamos con diodos, generadores de funciones y fuentes de señales externas.</p>
+</div>
+
+<div class="ref-card" style="margin-bottom:30px;">
+  <h4>Objetivo</h4>
+  <p style="margin:0; color:var(--ink-dim); font-size:15px;">Aprender a utilizar las herramientas básicas de Multisim para diseñar y simular circuitos electrónicos, comprender el funcionamiento de las compuertas lógicas y analizar diferentes señales eléctricas.</p>
+</div>
+
 <h5 class="step-group-title" id="grp-instalacion-multisim">Instalación de Multisim</h5>
 <ul class="step-list">
-  <li id="step-multisim-instalar-multisim">
-    <div class="step-thumb">[ imagen pendiente ]</div>
-    <div class="step-text">
-      <strong>Instalar Multisim</strong>
-      <a class="step-link-callout" href="https://www.ni.com/en/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html" target="_blank">Página oficial de NI para descargar Multisim</a>
-      <span>Ese link lleva a la página oficial de NI donde se descarga Multisim. Una vez descargado, se instala siguiendo los pasos del instalador. Ojo: Multisim solo está disponible para Windows.</span>
-    </div>
-  </li>
+            <li id="step-multisim-instalar-multisim">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Instalar Multisim</strong>
+                <a class="step-link-callout" href="https://www.ni.com/en/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html" target="_blank">Página oficial de NI para descargar Multisim</a>
+                <span>Ese link lleva a la página oficial de NI donde se descarga Multisim. Una vez descargado, se instala siguiendo los pasos del instalador. Ojo: Multisim solo está disponible para Windows.</span>
+              </div>
+            </li>
+            <li id="step-multisim-abrir">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Abrir Multisim</strong>
+                <span>Ya instalado, abrimos Multisim desde el buscador de aplicaciones de la computadora. Una vez iniciado el programa se ve el espacio de trabajo, que es donde se colocan los componentes electrónicos y se hacen las conexiones para construir los circuitos.</span>
+              </div>
+            </li>
 </ul>
+
+<h5 class="step-group-title" id="grp-multisim-funcion">Interpretar la función booleana</h5>
+<ul class="step-list">
+            <li id="step-multisim-funcion-booleana">
+              <div class="step-thumb has-img"><a href="images/multisim-funcion-booleana.png" target="_blank"><img src="images/multisim-funcion-booleana.png" alt="Función booleana F = [A B negada (C + BD) + A negada B negada] C"></a></div>
+              <div class="step-text">
+                <strong>La función a construir</strong>
+                <span>Antes de construir el primer circuito retomamos el álgebra booleana que vimos en Diseño Digital. El profesor eligió una función lógica para reproducirla en Multisim, la de la imagen.</span>
+                <span>Tiene cuatro variables de entrada (A, B, C y D) y cada una puede valer 0 o 1.</span>
+              </div>
+            </li>
+</ul>
+
+<div class="ref-card" style="margin:6px 0 22px;">
+  <h4>Operaciones que aparecen en la función</h4>
+  <table class="ref-table">
+    <tr><td><strong>AND (Y)</strong></td><td>Se representa con una multiplicación. Su salida es 1 solo cuando todas sus entradas son 1.</td></tr>
+    <tr><td><strong>OR (O)</strong></td><td>Se representa con una suma. Su salida es 1 cuando al menos una de sus entradas es 1.</td></tr>
+    <tr><td><strong>NOT (NO)</strong></td><td>Invierte el valor de una variable. Por ejemplo, si B = 1, entonces <span style="text-decoration:overline;">B</span> = 0.</td></tr>
+    <tr><td><strong>( ) y [ ]</strong></td><td>Paréntesis y corchetes: indican el orden en el que se resuelven las operaciones.</td></tr>
+  </table>
+</div>
+<div class="ref-card" style="margin-bottom:22px;">
+  <h4>La función se analiza por partes</h4>
+  <table class="ref-table">
+    <tr><td><span class="ref-num">1</span></td><td>Se calcula B·D con una compuerta AND.</td></tr>
+    <tr><td><span class="ref-num">2</span></td><td>Se obtiene C + B·D con una compuerta OR.</td></tr>
+    <tr><td><span class="ref-num">3</span></td><td>Se calcula A·<span style="text-decoration:overline;">B</span>·(C + B·D) usando NOT y AND.</td></tr>
+    <tr><td><span class="ref-num">4</span></td><td>Se calcula <span style="text-decoration:overline;">A</span>·<span style="text-decoration:overline;">B</span> usando NOT y AND.</td></tr>
+    <tr><td><span class="ref-num">5</span></td><td>Los dos términos anteriores se suman con una compuerta OR.</td></tr>
+    <tr><td><span class="ref-num">6</span></td><td>El resultado se multiplica por C con una compuerta AND para obtener la salida F.</td></tr>
+  </table>
+</div>
+
+<h5 class="step-group-title" id="grp-multisim-circuito">Construir el circuito lógico</h5>
+<ul class="step-list">
+            <li id="step-multisim-colocar-compuertas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Colocar las compuertas y las entradas</strong>
+                <span>Con la función interpretada, la representamos con compuertas lógicas. Primero buscamos y colocamos las compuertas AND, OR y NOT que hacen falta, y después las entradas digitales para las variables A, B, C y D.</span>
+              </div>
+            </li>
+            <li id="step-multisim-conectar-compuertas">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Conectar las compuertas</strong>
+                <span>Conectamos las compuertas siguiendo el orden de las operaciones de la expresión, de izquierda a derecha y resolviendo primero lo que está dentro de los paréntesis antes de pasar el resultado a la siguiente compuerta.</span>
+              </div>
+            </li>
+            <li id="step-multisim-indicador-salida">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Conectar el indicador de salida</strong>
+                <span>La última compuerta se conecta a un indicador lógico para ver el resultado. Antes de simular revisamos las conexiones para asegurarnos de que no quede ninguna entrada sin conectar.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-simulacion">Simular y comprobar la función</h5>
+<ul class="step-list">
+            <li id="step-multisim-ejecutar-simulacion">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Ejecutar la simulación</strong>
+                <span>Con el circuito construido, ejecutamos la simulación y cambiamos las entradas entre 0 y 1 para ver cómo cambia la salida.</span>
+                <span>Para verificar bien una función de cuatro variables se prueban todas las combinaciones posibles: como cada variable tiene dos estados, son 2<sup>4</sup> = 16 combinaciones. La salida tiene que coincidir con el resultado esperado de la expresión; así comprobamos que las compuertas están bien conectadas y que el circuito sí representa la función.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-diodos">Componentes electrónicos y diodos</h5>
+<ul class="step-list">
+            <li id="step-multisim-diodo">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Circuito con un diodo</strong>
+                <span>También exploramos el comportamiento de un diodo. Un diodo deja pasar la corriente principalmente en una dirección cuando está polarizado directamente; si se invierte su orientación puede bloquear el paso de la corriente, según las condiciones del circuito.</span>
+                <span>Al simular un circuito con diodo se ve cómo afecta a la señal de entrada y cómo cambia el resultado al modificar su orientación. Este comportamiento es la base de aplicaciones como la rectificación de señales eléctricas.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-generador">Generador de funciones</h5>
+<ul class="step-list">
+            <li id="step-multisim-colocar-generador">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Colocar y configurar el generador</strong>
+                <span>Multisim tiene un generador de funciones que produce señales eléctricas para usarlas como entrada de un circuito. Se coloca el instrumento en el espacio de trabajo, se hacen las conexiones y se abre su configuración para elegir el tipo de señal.</span>
+              </div>
+            </li>
+            <li id="step-multisim-formas-onda">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Formas de onda</strong>
+                <span>Identificamos tres formas de onda principales: <strong>senoidal</strong> (variación continua y periódica), <strong>triangular</strong> (aumenta y disminuye de manera lineal) y <strong>cuadrada</strong> (alterna entre dos niveles de señal).</span>
+              </div>
+            </li>
+            <li id="step-multisim-frecuencia-amplitud">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Frecuencia y amplitud</strong>
+                <span>También se pueden modificar la frecuencia y la amplitud. La frecuencia determina cuántos ciclos ocurren por segundo, y la amplitud indica el nivel de la señal respecto a su referencia.</span>
+                <span>Al ejecutar la simulación se observa la señal generada y cómo responde el circuito conectado a ella.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-archivo">Importar señales desde un archivo</h5>
+<ul class="step-list">
+            <li id="step-multisim-fuente-archivo">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Fuente con señal externa</strong>
+                <span>Otra herramienta que vimos es una fuente que usa una señal definida a partir de un archivo externo. Se coloca la fuente en el circuito, se abre su configuración y se selecciona el archivo con los datos de la señal; después se puede usar como entrada para estudiar el circuito.</span>
+              </div>
+            </li>
+            <li id="step-multisim-ejemplos-senales">
+              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-text">
+                <strong>Para qué sirve</strong>
+                <span>Es muy útil cuando se trabaja con señales de sistemas reales, como señales cardíacas de sensores biomédicos, señales cerebrales de aplicaciones de investigación o señales eléctricas de motores y otros dispositivos.</span>
+                <span>Por ejemplo, una señal cardíaca registrada antes se puede introducir en un circuito para ver cómo cambia al pasar por una etapa de acondicionamiento, sin volver a generarla con un sensor físico.</span>
+              </div>
+            </li>
+</ul>
+
+<div class="process-intro">
+  <h3>Conclusión</h3>
+  <p>Multisim sirve para diseñar, analizar y comprobar circuitos antes de armarlos. Con él representamos una función booleana con compuertas, estudiamos un diodo y trabajamos con distintas señales. Estos conocimientos son la base para evaluar un circuito de forma virtual antes de fabricarlo en los proyectos de Producción Electrónica, además de ayudar a detectar errores de conexión y reducir las pruebas físicas.</p>
+</div>
 
 </div>
 
