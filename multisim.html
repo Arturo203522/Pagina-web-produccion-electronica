@@ -69,11 +69,12 @@
 <h5 class="step-group-title" id="grp-instalacion-multisim">Instalación de Multisim</h5>
 <ul class="step-list">
             <li id="step-multisim-instalar-multisim">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/multisim-ni-pagina.png" target="_blank"><img src="images/multisim-ni-pagina.png" alt="Página oficial de NI donde se descarga Multisim"></a></div>
               <div class="step-text">
                 <strong>Instalar Multisim</strong>
                 <a class="step-link-callout" href="https://www.ni.com/en/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html" target="_blank">Página oficial de NI para descargar Multisim</a>
                 <span>Ese link lleva a la página oficial de NI donde se descarga Multisim. Una vez descargado, se instala siguiendo los pasos del instalador. Ojo: Multisim solo está disponible para Windows.</span>
+                <span><strong>Licencia:</strong> Multisim es un programa de pago, así que para usarlo se necesita una licencia. En nuestro caso la proporciona la escuela, por lo que no se muestra esa parte del proceso. Si no cuentas con una licencia institucional, revisa en la misma página de NI las opciones disponibles (como la versión para estudiantes).</span>
               </div>
             </li>
             <li id="step-multisim-abrir">
@@ -120,25 +121,61 @@
 
 <h5 class="step-group-title" id="grp-multisim-circuito">Construir el circuito lógico</h5>
 <ul class="step-list">
-            <li id="step-multisim-colocar-compuertas">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-compuerta-and">
+              <div class="step-thumb has-img"><a href="images/multisim-compuerta-and.png" target="_blank"><img src="images/multisim-compuerta-and.png" alt="Ventana Select a Component con la familia 74ALS del grupo TTL"></a></div>
               <div class="step-text">
-                <strong>Colocar las compuertas y las entradas</strong>
-                <span>Con la función interpretada, la representamos con compuertas lógicas. Primero buscamos y colocamos las compuertas AND, OR y NOT que hacen falta, y después las entradas digitales para las variables A, B, C y D.</span>
+                <strong>Buscar la compuerta AND</strong>
+                <span>Con la función interpretada, la representamos con compuertas lógicas. Para colocar un componente se abre la ventana <em>Select a Component</em>: en <em>Group</em> elegimos <strong>TTL</strong>, en <em>Family</em> la familia <strong>74ALS</strong> y ahí buscamos la compuerta AND, que es la <strong>74ALS08M</strong> (cuatro compuertas AND de dos entradas por chip).</span>
               </div>
             </li>
-            <li id="step-multisim-conectar-compuertas">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-compuerta-or">
+              <div class="step-thumb has-img"><a href="images/multisim-compuerta-or.png" target="_blank"><img src="images/multisim-compuerta-or.png" alt="Selección de la compuerta OR 74ALS32N"></a></div>
               <div class="step-text">
-                <strong>Conectar las compuertas</strong>
-                <span>Conectamos las compuertas siguiendo el orden de las operaciones de la expresión, de izquierda a derecha y resolviendo primero lo que está dentro de los paréntesis antes de pasar el resultado a la siguiente compuerta.</span>
+                <strong>Buscar la compuerta OR</strong>
+                <span>En la misma familia 74ALS buscamos la compuerta OR, la <strong>74ALS32N</strong> (cuatro compuertas OR de dos entradas). Presionamos OK y la colocamos en el espacio de trabajo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-compuerta-not">
+              <div class="step-thumb has-img"><a href="images/multisim-compuerta-not.png" target="_blank"><img src="images/multisim-compuerta-not.png" alt="Selección del inversor 74ALS04BM"></a></div>
+              <div class="step-text">
+                <strong>Buscar el inversor (NOT)</strong>
+                <span>Para las variables negadas usamos el inversor <strong>74ALS04BM</strong>, un chip con seis inversores. Lo buscamos igual, en el grupo TTL, familia 74ALS.</span>
+              </div>
+            </li>
+            <li id="step-multisim-entradas-digitales">
+              <div class="step-thumb has-img"><a href="images/multisim-entrada-digital.png" target="_blank"><img src="images/multisim-entrada-digital.png" alt="Selección de INTERACTIVE_DIGITAL_CONSTANT en DIGITAL_SOURCES"></a></div>
+              <div class="step-text">
+                <strong>Colocar las entradas digitales</strong>
+                <span>Para las variables A, B, C y D usamos entradas que podamos cambiar entre 0 y 1 durante la simulación. En <em>Group</em> elegimos <strong>Sources</strong>, en <em>Family</em> <strong>DIGITAL_SOURCES</strong> y el componente <strong>INTERACTIVE_DIGITAL_CONSTANT</strong>. Colocamos cuatro, una por variable, y con la tecla Espacio (<em>Key = Space</em>) cada una alterna su valor.</span>
+              </div>
+            </li>
+            <li id="step-multisim-componentes-colocados">
+              <div class="step-thumb has-img"><a href="images/multisim-componentes-colocados.png" target="_blank"><img src="images/multisim-componentes-colocados.png" alt="Compuertas AND, OR y entradas digitales colocadas sin conectar"></a></div>
+              <div class="step-text">
+                <strong>Acomodar los componentes</strong>
+                <span>Colocamos las compuertas AND y OR que hacen falta y las cuatro entradas digitales, nombradas A, B, C y D. Todavía sin cables, solo acomodados en el espacio de trabajo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-nombre-de-red">
+              <div class="step-thumb has-img"><a href="images/multisim-nombre-red.png" target="_blank"><img src="images/multisim-nombre-red.png" alt="Ventana Net Properties con el campo Preferred net name"></a></div>
+              <div class="step-text">
+                <strong>Conectar con nombres de red</strong>
+                <span>En lugar de dibujar todos los cables, podemos conectar dos puntos dándoles el mismo nombre. Al abrir las propiedades de la conexión (<em>Net Properties</em>), en el campo <strong>Preferred net name</strong> escribimos el nombre que queremos, por ejemplo A, B, C o D. Todos los puntos con el mismo nombre quedan conectados entre sí, así que cada entrada llega directamente a las compuertas donde se escribió su nombre.</span>
+                <span>Esto mantiene el esquemático más limpio y respeta el orden de las operaciones de la expresión: primero lo que está dentro de los paréntesis y después el resultado hacia la siguiente compuerta.</span>
               </div>
             </li>
             <li id="step-multisim-indicador-salida">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/multisim-indicador-probe.png" target="_blank"><img src="images/multisim-indicador-probe.png" alt="Selección de PROBE_RED en la familia PROBE"></a></div>
               <div class="step-text">
-                <strong>Conectar el indicador de salida</strong>
-                <span>La última compuerta se conecta a un indicador lógico para ver el resultado. Antes de simular revisamos las conexiones para asegurarnos de que no quede ninguna entrada sin conectar.</span>
+                <strong>Colocar el indicador de salida</strong>
+                <span>La última compuerta se conecta a un indicador para ver el resultado. En <em>Group</em> elegimos <strong>Indicators</strong>, en <em>Family</em> <strong>PROBE</strong> y el componente <strong>PROBE_RED</strong>, que es un led rojo (probe) que se enciende según el nivel de la señal. Antes de simular revisamos las conexiones para asegurarnos de que no quede ninguna entrada sin conectar.</span>
+              </div>
+            </li>
+            <li id="step-multisim-circuito-terminado">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-terminado.png" target="_blank"><img src="images/multisim-circuito-terminado.png" alt="Circuito lógico completo de la función booleana en Multisim"></a></div>
+              <div class="step-text">
+                <strong>Circuito terminado</strong>
+                <span>Así quedó el circuito completo: los inversores para las variables negadas, las compuertas AND y OR en el orden de la función, las cuatro entradas digitales (A, B, C y D) y el indicador X1 en la salida.</span>
               </div>
             </li>
 </ul>
