@@ -48,6 +48,7 @@
   <a href="#grp-multisim-circuito">Circuito lógico</a>
   <a href="#grp-multisim-simulacion">Simulación</a>
   <a href="#grp-multisim-rc">Circuito RC</a>
+  <a href="#grp-multisim-transistor">Transistor</a>
   <a href="#grp-multisim-diodos">Diodos</a>
   <a href="#grp-multisim-generador">Generador de funciones</a>
   <a href="#grp-multisim-archivo">Señales desde archivo</a>
@@ -258,6 +259,90 @@
                 <strong>Conectar el circuito</strong>
                 <span>Conectamos los componentes en serie: la fuente V1 de 5 V, la resistencia R1 de 1 kΩ y el capacitor C1 de 1 µF, con el otro extremo de la fuente a tierra. Es un circuito RC.</span>
                 <span>Para ponerle nombre a las conexiones se hace como en el circuito lógico: doble clic sobre la línea roja y se escribe el nombre en <em>Preferred net name</em>. Aquí quedaron <strong>1</strong> (después de la fuente), <strong>Vc</strong> (entre la resistencia y el capacitor) y <strong>0</strong> (tierra).</span>
+              </div>
+            </li>
+            <li id="step-multisim-rc-analisis">
+              <div class="step-thumb has-img"><a href="images/multisim-simulate-menu.png" target="_blank"><img src="images/multisim-simulate-menu.png" alt="Menú Simulate con la opción Analyses and simulation"></a></div>
+              <div class="step-text">
+                <strong>Abrir Analyses and simulation</strong>
+                <span>Con el circuito armado, vamos al menú <strong>Simulate</strong> y elegimos <strong>Analyses and simulation</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-rc-transient">
+              <div class="step-thumb has-img"><a href="images/multisim-transient-condiciones.png" target="_blank"><img src="images/multisim-transient-condiciones.png" alt="Análisis Transient con el menú de condiciones iniciales"></a></div>
+              <div class="step-text">
+                <strong>Elegir el análisis Transient</strong>
+                <span>En la lista de la izquierda seleccionamos <strong>Transient</strong>, que analiza cómo cambia el circuito a lo largo del tiempo. En <em>Initial conditions</em> elegimos <strong>Set to zero</strong>, para que la simulación empiece con el capacitor descargado.</span>
+              </div>
+            </li>
+            <li id="step-multisim-rc-tiempo">
+              <div class="step-thumb has-img"><a href="images/multisim-transient-tiempo.png" target="_blank"><img src="images/multisim-transient-tiempo.png" alt="Parámetros del análisis Transient con End time de 0.005 s"></a></div>
+              <div class="step-text">
+                <strong>Tiempo final de la simulación</strong>
+                <span>Dejamos <em>Start time (TSTART)</em> en 0 y cambiamos <em>End time (TSTOP)</em> a <strong>0.005</strong> s (5 ms).</span>
+              </div>
+            </li>
+            <li id="step-multisim-rc-salida">
+              <div class="step-thumb has-img"><a href="images/multisim-transient-salida.png" target="_blank"><img src="images/multisim-transient-salida.png" alt="Pestaña Output con V(vc) en las variables seleccionadas"></a></div>
+              <div class="step-text">
+                <strong>Elegir la variable de salida</strong>
+                <span>Entramos a la pestaña <strong>Output</strong>, seleccionamos <strong>V(vc)</strong> (el voltaje en el capacitor, el nombre de red que le pusimos) en la lista de variables del circuito y damos clic en <strong>Add</strong>. Así pasa a <em>Selected variables for analysis</em>. Después damos clic en <strong>Run</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-rc-grafica">
+              <div class="step-thumb has-img"><a href="images/multisim-grafica-vc.png" target="_blank"><img src="images/multisim-grafica-vc.png" alt="Gráfica Transient del voltaje V(vc) subiendo hasta 5 V"></a></div>
+              <div class="step-text">
+                <strong>Resultado en la gráfica</strong>
+                <span>Al correr el análisis se abre el <em>Grapher View</em> con la gráfica del voltaje V(vc) contra el tiempo. El voltaje del capacitor sube desde 0 V y se va acercando a los 5 V de la fuente: el capacitor se está cargando a través de la resistencia.</span>
+                <span>El tiempo que tarda depende de la resistencia y del capacitor. Aquí R·C = 1 kΩ · 1 µF = 1 ms, y en la gráfica se ve que a 1 ms el voltaje ya va en unos 3 V, y para los 5 ms prácticamente llegó a 5 V.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-multisim-transistor">Curvas del transistor</h5>
+<ul class="step-list">
+            <li id="step-multisim-transistor-curvas">
+              <div class="step-thumb has-img"><a href="images/multisim-curvas-transistor.png" target="_blank"><img src="images/multisim-curvas-transistor.png" alt="Curvas características de un transistor con regiones de corte, activa y saturación"></a></div>
+              <div class="step-text">
+                <strong>Las curvas características</strong>
+                <span>Después vimos que en Multisim se pueden hacer distintos tipos de análisis, y el profesor lo mostró con un transistor. Los transistores son muy importantes: están en toda la electrónica y sirven, entre otras cosas, para manejar potencia.</span>
+                <span>Las <strong>curvas características</strong> de un transistor en emisor común son pruebas donde se dejan valores fijos de corriente de base (I<sub>B</sub>) y se varía el voltaje colector-emisor (V<sub>CE</sub>), midiendo la corriente de colector (I<sub>C</sub>). La gráfica muestra una curva por cada corriente de base y tres regiones: <em>corte</em> (I<sub>C</sub> = 0), <em>activa</em> y <em>saturación</em> (V<sub>CE</sub> ≈ 0), además de la recta de carga y el punto de operación "Q". El objetivo fue representar estas curvas en Multisim.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-place">
+              <div class="step-thumb has-img"><a href="images/multisim-place-transistor.png" target="_blank"><img src="images/multisim-place-transistor.png" alt="Botón Place Transistor en la barra de herramientas"></a></div>
+              <div class="step-text">
+                <strong>Buscar el transistor</strong>
+                <span>Para colocarlo usamos el botón <strong>Place Transistor</strong> de la barra de herramientas; al pasar el cursor aparece su nombre.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-2n2222a">
+              <div class="step-thumb has-img"><a href="images/multisim-transistor-2n2222a.png" target="_blank"><img src="images/multisim-transistor-2n2222a.png" alt="Selección del transistor 2N2222A en la familia BJT_NPN"></a></div>
+              <div class="step-text">
+                <strong>Elegir el transistor</strong>
+                <span>En la ventana <em>Select a Component</em>, en <em>Group</em> queda <strong>Transistors</strong>, en <em>Family</em> elegimos <strong>BJT_NPN</strong> y el componente <strong>2N2222A</strong>, un transistor bipolar NPN.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-corriente">
+              <div class="step-thumb has-img"><a href="images/multisim-fuente-corriente.png" target="_blank"><img src="images/multisim-fuente-corriente.png" alt="Selección de DC_CURRENT en SIGNAL_CURRENT_SOURCES"></a></div>
+              <div class="step-text">
+                <strong>Fuente de corriente DC</strong>
+                <span>Para fijar la corriente de base usamos una fuente de corriente: en <em>Group</em> elegimos <strong>Sources</strong>, en <em>Family</em> <strong>SIGNAL_CURRENT_SOURCES</strong> y el componente <strong>DC_CURRENT</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-voltaje">
+              <div class="step-thumb has-img"><a href="images/multisim-fuente-dc-transistor.png" target="_blank"><img src="images/multisim-fuente-dc-transistor.png" alt="Selección de DC_POWER en POWER_SOURCES"></a></div>
+              <div class="step-text">
+                <strong>Fuente de voltaje</strong>
+                <span>Para variar el voltaje colector-emisor usamos una fuente de voltaje: Sources → POWER_SOURCES → <strong>DC_POWER</strong>, como en el circuito RC.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-circuito">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-transistor.png" target="_blank"><img src="images/multisim-circuito-transistor.png" alt="Transistor 2N2222A con fuente de corriente en la base y fuente de voltaje en el colector"></a></div>
+              <div class="step-text">
+                <strong>Conectar el circuito</strong>
+                <span>Conectamos la fuente de corriente I1 a la <strong>base</strong> del transistor Q1, la fuente de voltaje V1 entre el <strong>colector</strong> y el <strong>emisor</strong>, y el emisor a tierra. Las conexiones se nombraron como antes (doble clic sobre la línea roja): <strong>1</strong>, <strong>2</strong> y <strong>0</strong>.</span>
+                <span>De esta forma I1 controla la corriente de base y V1 define el voltaje colector-emisor, que son justo las dos cantidades de las curvas características. En la captura aparecen I1 = 1 A y V1 = 12 V.</span>
               </div>
             </li>
 </ul>
