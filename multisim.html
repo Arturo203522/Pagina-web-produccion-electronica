@@ -345,6 +345,74 @@
                 <span>De esta forma I1 controla la corriente de base y V1 define el voltaje colector-emisor, que son justo las dos cantidades de las curvas características. En la captura aparecen I1 = 1 A y V1 = 12 V.</span>
               </div>
             </li>
+            <li id="step-multisim-transistor-dcsweep">
+              <div class="step-thumb has-img"><a href="images/multisim-dcsweep-parametros.png" target="_blank"><img src="images/multisim-dcsweep-parametros.png" alt="Análisis DC Sweep con VCE e IB como fuentes"></a></div>
+              <div class="step-text">
+                <strong>Análisis DC Sweep</strong>
+                <span>En <strong>Simulate → Analyses and simulation</strong> elegimos ahora <strong>DC Sweep</strong>, que va variando una o dos fuentes dentro de un rango. Como las curvas necesitan variar dos cosas, marcamos <strong>Use source 2</strong> y configuramos las dos fuentes:</span>
+                <span><strong>Source 1: VCE</strong> (el voltaje colector-emisor), de 0 a 5 V con incrementos de 0.5 V.</span>
+                <span><strong>Source 2: IB</strong> (la corriente de base), de 0 a 0.01 A con incrementos de 0.001 A.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-salida">
+              <div class="step-thumb has-img"><a href="images/multisim-dcsweep-salida.png" target="_blank"><img src="images/multisim-dcsweep-salida.png" alt="Pestaña Output del DC Sweep con I(Q1[IC]) seleccionada"></a></div>
+              <div class="step-text">
+                <strong>Variable de salida</strong>
+                <span>En la pestaña <strong>Output</strong> seleccionamos <strong>I(Q1[IC])</strong>, la corriente de colector del transistor Q1, y la agregamos con <strong>Add</strong> a las variables seleccionadas. Después damos clic en <strong>Run</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-resultado">
+              <div class="step-thumb has-img"><a href="images/multisim-curvas-resultado.png" target="_blank"><img src="images/multisim-curvas-resultado.png" alt="Gráfica DC Transfer Characteristic con las curvas del transistor 2N2222A"></a></div>
+              <div class="step-text">
+                <strong>Resultado: las curvas del transistor</strong>
+                <span>Al correr el análisis se abre el <em>Grapher View</em> con la gráfica <strong>DC Transfer Characteristic</strong>: la corriente de colector (eje vertical) contra el voltaje colector-emisor (eje horizontal), con una curva de color por cada valor de corriente de base.</span>
+                <span>Se ve el comportamiento que mostraba la gráfica teórica: la corriente sube rápido al inicio (región de saturación) y después se mantiene casi plana al aumentar el voltaje (región activa). Mientras mayor es la corriente de base, más alta queda la curva, y con IB = 0 la corriente es cero (región de corte).</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-resistencia">
+              <div class="step-thumb has-img"><a href="images/multisim-resistencia-transistor.png" target="_blank"><img src="images/multisim-resistencia-transistor.png" alt="Selección de una resistencia de 1k en la familia RESISTOR"></a></div>
+              <div class="step-text">
+                <strong>Agregar una resistencia</strong>
+                <span>Para el siguiente análisis el profesor cambió el circuito y le agregó una resistencia. La buscamos igual que antes: Basic → RESISTOR → <strong>1k</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-transistor-circuito-r">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-transistor-r.png" target="_blank"><img src="images/multisim-circuito-transistor-r.png" alt="Transistor 2N2222A con resistencia R1 de 1 kΩ en el colector"></a></div>
+              <div class="step-text">
+                <strong>Circuito con resistencia</strong>
+                <span>La resistencia R1 de 1 kΩ queda en serie con el colector del transistor: la fuente de corriente Ib va a la base y la fuente de voltaje Vce (12 V) alimenta el colector a través de R1. Las conexiones quedaron nombradas 0, 1, 2 y 3.</span>
+              </div>
+            </li>
+            <li id="step-multisim-temperature-menu">
+              <div class="step-thumb has-img"><a href="images/multisim-simulate-menu.png" target="_blank"><img src="images/multisim-simulate-menu.png" alt="Menú Simulate con la opción Analyses and simulation"></a></div>
+              <div class="step-text">
+                <strong>Abrir Analyses and simulation</strong>
+                <span>Volvemos a <strong>Simulate → Analyses and simulation</strong>, el mismo menú que usamos en el circuito RC.</span>
+              </div>
+            </li>
+            <li id="step-multisim-temperature-parametros">
+              <div class="step-thumb has-img"><a href="images/multisim-temperature-parametros.png" target="_blank"><img src="images/multisim-temperature-parametros.png" alt="Análisis Temperature Sweep con el análisis Transient seleccionado"></a></div>
+              <div class="step-text">
+                <strong>Análisis Temperature Sweep</strong>
+                <span>Ahora elegimos <strong>Temperature Sweep</strong>, que repite un análisis a distintas temperaturas para ver cómo cambia el circuito. En <em>Sweep parameter</em> queda <strong>Temperature</strong> (el circuito está a 27 °C), y en <em>Points to sweep</em> la variación es lineal, de 0 °C a 500 °C con incrementos de 50 °C (11 puntos).</span>
+                <span>En <em>Analysis to sweep</em> se elige qué análisis se repite en cada temperatura; ahí aparecen DC Operating Point, AC Sweep, Single Frequency AC, Transient y Nested sweep, y seleccionamos <strong>Transient</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-temperature-salida">
+              <div class="step-thumb has-img"><a href="images/multisim-temperature-salida.png" target="_blank"><img src="images/multisim-temperature-salida.png" alt="Pestaña Output del Temperature Sweep con I(Q1[IC]) seleccionada"></a></div>
+              <div class="step-text">
+                <strong>Variable de salida</strong>
+                <span>En la pestaña <strong>Output</strong> dejamos como variable seleccionada <strong>I(Q1[IC])</strong>, la corriente de colector, y damos clic en <strong>Run</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-temperature-resultado">
+              <div class="step-thumb has-img"><a href="images/multisim-temperature-resultado.png" target="_blank"><img src="images/multisim-temperature-resultado.png" alt="Gráfica del Temperature Sweep con la corriente de colector a distintas temperaturas"></a></div>
+              <div class="step-text">
+                <strong>Resultado del Temperature Sweep</strong>
+                <span>Se abre el <em>Grapher View</em> con una curva de la corriente de colector por cada temperatura (en la gráfica se ven las de 0, 50, 100 y 150 °C). Como el análisis que se repite es Transient, el eje horizontal es el tiempo.</span>
+                <span>Las líneas son casi planas y quedan muy cerca una de otra, todas alrededor de 11.74 a 11.75 mA, así que en este circuito la temperatura casi no cambia la corriente de colector.</span>
+              </div>
+            </li>
 </ul>
 
 <h5 class="step-group-title" id="grp-multisim-diodos">Componentes electrónicos y diodos</h5>
