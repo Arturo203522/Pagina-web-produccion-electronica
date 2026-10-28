@@ -500,23 +500,75 @@
                 <span>En la paleta se elige el color que se quiera; en este caso el profesor escogió el <strong>amarillo</strong> y damos clic en OK. La señal de ese cable se verá de ese color en el osciloscopio.</span>
               </div>
             </li>
+            <li id="step-multisim-diodo-despues-color">
+              <div class="step-thumb has-img"><a href="images/multisim-diodo-color-amarillo.png" target="_blank"><img src="images/multisim-diodo-color-amarillo.png" alt="Circuito con el cable de la señal del generador en amarillo"></a></div>
+              <div class="step-text">
+                <strong>El circuito con el color cambiado</strong>
+                <span>Después de cambiar el color, el cable de la señal del generador (conexión 2) se ve en amarillo y el resto sigue en rojo, así se distingue cada señal en el osciloscopio.</span>
+              </div>
+            </li>
+            <li id="step-multisim-generador-60hz">
+              <div class="step-thumb has-img"><a href="images/multisim-generador-60hz.png" target="_blank"><img src="images/multisim-generador-60hz.png" alt="Ventana del generador de funciones con frecuencia de 60 Hz"></a></div>
+              <div class="step-text">
+                <strong>Configurar el generador</strong>
+                <span>Con doble clic sobre el generador de funciones se abre su ventana de configuración. Ahí cambiamos la <strong>frecuencia a 60 Hz</strong>; la amplitud quedó en 10 V de pico (Vp) y el offset en 0.</span>
+              </div>
+            </li>
+            <li id="step-multisim-osciloscopio-resultado">
+              <div class="step-thumb has-img"><a href="images/multisim-osciloscopio-resultado.png" target="_blank"><img src="images/multisim-osciloscopio-resultado.png" alt="Pantalla del osciloscopio con la señal del generador y la señal después del diodo"></a></div>
+              <div class="step-text">
+                <strong>Primer resultado en el osciloscopio</strong>
+                <span>Con doble clic sobre el osciloscopio se abre su pantalla y se inicia la simulación. La línea <strong>amarilla</strong> es la señal completa del generador y la <strong>roja</strong> es la que queda en la resistencia después del diodo: solo aparecen los semiciclos positivos, porque el diodo bloquea la parte negativa de la señal (rectificación de media onda).</span>
+                <span>Se notó que la línea roja no alcanzaba la amplitud de la amarilla, y por eso el profesor cambió el osciloscopio por otro más completo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-tektronix-menu">
+              <div class="step-thumb has-img"><a href="images/multisim-tektronix-menu.png" target="_blank"><img src="images/multisim-tektronix-menu.png" alt="Barra de instrumentos con el Tektronix oscilloscope señalado"></a></div>
+              <div class="step-text">
+                <strong>Osciloscopio Tektronix</strong>
+                <span>Borró el osciloscopio y puso uno más parecido al de laboratorio, el <strong>Tektronix oscilloscope</strong>, que también está en la barra de instrumentos del lado derecho (al pasar el cursor aparece su nombre).</span>
+              </div>
+            </li>
+            <li id="step-multisim-tektronix-bloque">
+              <div class="step-thumb has-img"><a href="images/multisim-tektronix-bloque.png" target="_blank"><img src="images/multisim-tektronix-bloque.png" alt="Bloque del osciloscopio Tektronix XSC1"></a></div>
+              <div class="step-text">
+                <strong>Cómo se ve el Tektronix</strong>
+                <span>Aparece como el bloque <strong>XSC1</strong> con la marca Tektronix. Tiene cuatro canales de entrada (<strong>1, 2, 3 y 4</strong>), una entrada de disparo (<strong>T</strong>) y las terminales de compensación de la sonda (<strong>P</strong> y <strong>G</strong>).</span>
+              </div>
+            </li>
+            <li id="step-multisim-tektronix-conectado">
+              <div class="step-thumb has-img"><a href="images/multisim-tektronix-conectado.png" target="_blank"><img src="images/multisim-tektronix-conectado.png" alt="Circuito con el osciloscopio Tektronix conectado"></a></div>
+              <div class="step-text">
+                <strong>Conectar el Tektronix</strong>
+                <span>Lo conectamos al circuito: el cable amarillo de la señal del generador (conexión 2) llega al <strong>canal 1</strong>, y el otro canal se usa para la señal de la resistencia, después del diodo.</span>
+              </div>
+            </li>
+            <li id="step-multisim-tektronix-resultado">
+              <div class="step-thumb has-img"><a href="images/multisim-tektronix-resultado.png" target="_blank"><img src="images/multisim-tektronix-resultado.png" alt="Pantalla del osciloscopio Tektronix con las señales de los canales 1 y 2"></a></div>
+              <div class="step-text">
+                <strong>Resultado en el Tektronix</strong>
+                <span>Al encenderlo se abre la pantalla de un osciloscopio Tektronix TDS 2024 con sus perillas y botones. Arriba se ve en amarillo (canal 1) la señal completa del generador, y abajo en azul (canal 2) la señal después del diodo, con solo los semiciclos positivos.</span>
+                <span>Este osciloscopio también da mediciones: en el canal 2 marca un valor pico a pico de 9.24 V, un poco menos que los 10 V de pico del generador porque el diodo consume una parte del voltaje.</span>
+              </div>
+            </li>
 </ul>
 
 <h5 class="step-group-title" id="grp-multisim-archivo">Importar señales desde un archivo</h5>
 <ul class="step-list">
             <li id="step-multisim-fuente-archivo">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/multisim-fuente-pwl.png" target="_blank"><img src="images/multisim-fuente-pwl.png" alt="Selección de PIECEWISE_LINEAR_VOLTAGE en SIGNAL_VOLTAGE_SOURCES"></a></div>
               <div class="step-text">
-                <strong>Fuente con señal externa</strong>
-                <span>Otra herramienta que vimos es una fuente que usa una señal definida a partir de un archivo externo. Se coloca la fuente en el circuito, se abre su configuración y se selecciona el archivo con los datos de la señal; después se puede usar como entrada para estudiar el circuito.</span>
+                <strong>Fuente con señal personalizada</strong>
+                <span>Para el último circuito el profesor borró todo, incluido el generador de funciones, y puso otra fuente: en <em>Group</em> elegimos <strong>Sources</strong>, en <em>Family</em> <strong>SIGNAL_VOLTAGE_SOURCES</strong> y el componente <strong>PIECEWISE_LINEAR_VOLTAGE</strong>, una fuente que genera una forma de onda personalizada a partir de puntos de tiempo y voltaje.</span>
+                <span>Es la que permite usar una señal definida a partir de un archivo externo: se coloca la fuente en el circuito, se abre su configuración y se selecciona el archivo con los datos de la señal; después se usa como entrada para estudiar el circuito.</span>
+                <span>Es muy útil cuando se trabaja con señales de sistemas reales, como señales cardíacas de sensores biomédicos, señales cerebrales de aplicaciones de investigación o señales eléctricas de motores y otros dispositivos. Por ejemplo, una señal cardíaca registrada antes se puede introducir en un circuito para ver cómo cambia al pasar por una etapa de acondicionamiento, sin volver a generarla con un sensor físico.</span>
               </div>
             </li>
-            <li id="step-multisim-ejemplos-senales">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-fuente-archivo-circuito">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-pwl.png" target="_blank"><img src="images/multisim-circuito-pwl.png" alt="Circuito con la fuente PIECEWISE_LINEAR_VOLTAGE, diodo, resistencia y osciloscopio Tektronix"></a></div>
               <div class="step-text">
-                <strong>Para qué sirve</strong>
-                <span>Es muy útil cuando se trabaja con señales de sistemas reales, como señales cardíacas de sensores biomédicos, señales cerebrales de aplicaciones de investigación o señales eléctricas de motores y otros dispositivos.</span>
-                <span>Por ejemplo, una señal cardíaca registrada antes se puede introducir en un circuito para ver cómo cambia al pasar por una etapa de acondicionamiento, sin volver a generarla con un sensor físico.</span>
+                <strong>Conectar el circuito</strong>
+                <span>La fuente V1 reemplaza al generador de funciones en el mismo circuito: va al diodo D1, el diodo a la resistencia R1 de 1 kΩ y esta a tierra, y el osciloscopio Tektronix se conecta al canal 1 en la señal de la resistencia (conexión 1).</span>
               </div>
             </li>
 </ul>
