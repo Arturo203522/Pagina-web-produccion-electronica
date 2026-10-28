@@ -49,8 +49,7 @@
   <a href="#grp-multisim-simulacion">Simulación</a>
   <a href="#grp-multisim-rc">Circuito RC</a>
   <a href="#grp-multisim-transistor">Transistor</a>
-  <a href="#grp-multisim-diodos">Diodos</a>
-  <a href="#grp-multisim-generador">Generador de funciones</a>
+  <a href="#grp-multisim-diodos">Diodo y generador</a>
   <a href="#grp-multisim-archivo">Señales desde archivo</a>
 </div>
 
@@ -415,40 +414,90 @@
             </li>
 </ul>
 
-<h5 class="step-group-title" id="grp-multisim-diodos">Componentes electrónicos y diodos</h5>
+<h5 class="step-group-title" id="grp-multisim-diodos">Diodo y generador de funciones</h5>
 <ul class="step-list">
+            <li id="step-multisim-generador-menu">
+              <div class="step-thumb has-img"><a href="images/multisim-generador-menu.png" target="_blank"><img src="images/multisim-generador-menu.png" alt="Barra de instrumentos con el Function generator señalado"></a></div>
+              <div class="step-text">
+                <strong>Sacar el generador de funciones</strong>
+                <span>Después de eso el profesor borró todo y empezó un circuito nuevo. Multisim tiene un <strong>generador de funciones</strong> que produce señales eléctricas para usarlas como entrada de un circuito. Está en la barra de instrumentos del lado derecho (al pasar el cursor aparece "Function generator").</span>
+              </div>
+            </li>
+            <li id="step-multisim-generador-xfg1">
+              <div class="step-thumb has-img"><a href="images/multisim-generador-xfg1.png" target="_blank"><img src="images/multisim-generador-xfg1.png" alt="Generador de funciones XFG1 con sus terminales y formas de onda"></a></div>
+              <div class="step-text">
+                <strong>Cómo se ve el generador</strong>
+                <span>Al colocarlo aparece como el bloque <strong>XFG1</strong>, con tres terminales: <strong>+</strong>, <strong>COM</strong> y <strong>−</strong>. Arriba tiene tres botones para elegir la forma de onda: <strong>senoidal</strong> (variación continua y periódica), <strong>triangular</strong> (aumenta y disminuye de forma lineal) y <strong>cuadrada</strong> (alterna entre dos niveles). Al abrir su configuración también se pueden cambiar la <strong>frecuencia</strong> (cuántos ciclos ocurren por segundo) y la <strong>amplitud</strong> (el nivel de la señal respecto a su referencia).</span>
+              </div>
+            </li>
             <li id="step-multisim-diodo">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+              <div class="step-thumb has-img"><a href="images/multisim-diodo-1bh62.png" target="_blank"><img src="images/multisim-diodo-1bh62.png" alt="Selección del diodo 1BH62 en la familia DIODE"></a></div>
               <div class="step-text">
-                <strong>Circuito con un diodo</strong>
-                <span>También exploramos el comportamiento de un diodo. Un diodo deja pasar la corriente principalmente en una dirección cuando está polarizado directamente; si se invierte su orientación puede bloquear el paso de la corriente, según las condiciones del circuito.</span>
-                <span>Al simular un circuito con diodo se ve cómo afecta a la señal de entrada y cómo cambia el resultado al modificar su orientación. Este comportamiento es la base de aplicaciones como la rectificación de señales eléctricas.</span>
+                <strong>Colocar el diodo</strong>
+                <span>Un diodo deja pasar la corriente principalmente en una dirección cuando está polarizado directamente, y la bloquea si se invierte su orientación. Para colocarlo, en <em>Group</em> elegimos <strong>Diodes</strong>, en <em>Family</em> <strong>DIODE</strong> y el componente <strong>1BH62</strong>.</span>
               </div>
             </li>
-</ul>
-
-<h5 class="step-group-title" id="grp-multisim-generador">Generador de funciones</h5>
-<ul class="step-list">
-            <li id="step-multisim-colocar-generador">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-diodo-resistencia">
+              <div class="step-thumb has-img"><a href="images/multisim-resistencia.png" target="_blank"><img src="images/multisim-resistencia.png" alt="Selección de una resistencia de 1k en la familia RESISTOR"></a></div>
               <div class="step-text">
-                <strong>Colocar y configurar el generador</strong>
-                <span>Multisim tiene un generador de funciones que produce señales eléctricas para usarlas como entrada de un circuito. Se coloca el instrumento en el espacio de trabajo, se hacen las conexiones y se abre su configuración para elegir el tipo de señal.</span>
+                <strong>Colocar la resistencia</strong>
+                <span>Después colocamos una resistencia de <strong>1k</strong> (1 kΩ): Basic → RESISTOR → 1k, igual que en los circuitos anteriores.</span>
               </div>
             </li>
-            <li id="step-multisim-formas-onda">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-diodo-tierra">
+              <div class="step-thumb has-img"><a href="images/multisim-tierra-diodo.png" target="_blank"><img src="images/multisim-tierra-diodo.png" alt="Selección de GROUND en POWER_SOURCES"></a></div>
               <div class="step-text">
-                <strong>Formas de onda</strong>
-                <span>Identificamos tres formas de onda principales: <strong>senoidal</strong> (variación continua y periódica), <strong>triangular</strong> (aumenta y disminuye de manera lineal) y <strong>cuadrada</strong> (alterna entre dos niveles de señal).</span>
+                <strong>Colocar la tierra</strong>
+                <span>La tierra se busca en Sources → POWER_SOURCES → <strong>GROUND</strong>. Para <strong>rotar</strong> un componente se selecciona y se presiona la letra <strong>R</strong>; así se puede girar la tierra a la posición que se necesite.</span>
               </div>
             </li>
-            <li id="step-multisim-frecuencia-amplitud">
-              <div class="step-thumb">[ imagen pendiente ]</div>
+            <li id="step-multisim-diodo-circuito">
+              <div class="step-thumb has-img"><a href="images/multisim-circuito-diodo.png" target="_blank"><img src="images/multisim-circuito-diodo.png" alt="Circuito con generador de funciones, diodo 1BH62, resistencia de 1 kΩ y tierra"></a></div>
               <div class="step-text">
-                <strong>Frecuencia y amplitud</strong>
-                <span>También se pueden modificar la frecuencia y la amplitud. La frecuencia determina cuántos ciclos ocurren por segundo, y la amplitud indica el nivel de la señal respecto a su referencia.</span>
-                <span>Al ejecutar la simulación se observa la señal generada y cómo responde el circuito conectado a ella.</span>
+                <strong>Conectar el circuito</strong>
+                <span>Conectamos la terminal <strong>+</strong> del generador al diodo, el diodo a la resistencia y la resistencia a tierra; la terminal <strong>COM</strong> del generador también va a tierra. Las conexiones quedaron nombradas <strong>2</strong> (generador a diodo), <strong>1</strong> (diodo a resistencia) y <strong>0</strong> (tierra).</span>
+              </div>
+            </li>
+            <li id="step-multisim-diodo-interactive">
+              <div class="step-thumb has-img"><a href="images/multisim-interactive.png" target="_blank"><img src="images/multisim-interactive.png" alt="Análisis Interactive Simulation con el botón Run"></a></div>
+              <div class="step-text">
+                <strong>Interactive Simulation</strong>
+                <span>En <strong>Simulate → Analyses and simulation</strong> elegimos <strong>Interactive Simulation</strong>, dejamos los valores que trae y damos clic en <strong>Run</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-osciloscopio">
+              <div class="step-thumb has-img"><a href="images/multisim-osciloscopio.png" target="_blank"><img src="images/multisim-osciloscopio.png" alt="Osciloscopio XSC1 con canales A y B"></a></div>
+              <div class="step-text">
+                <strong>Sacar el osciloscopio</strong>
+                <span>Para ver las señales usamos un <strong>osciloscopio</strong>, que también está en la barra de instrumentos del lado derecho. Aparece como el bloque <strong>XSC1</strong>, con los canales <strong>A</strong> y <strong>B</strong> y una entrada de disparo externo (<em>Ext Trig</em>).</span>
+              </div>
+            </li>
+            <li id="step-multisim-osciloscopio-conectado">
+              <div class="step-thumb has-img"><a href="images/multisim-osciloscopio-conectado.png" target="_blank"><img src="images/multisim-osciloscopio-conectado.png" alt="Osciloscopio conectado al circuito con diodo"></a></div>
+              <div class="step-text">
+                <strong>Conectar el osciloscopio</strong>
+                <span>Conectamos el canal <strong>A</strong> a la señal del generador (conexión 2) y el canal <strong>B</strong> a la señal que queda en la resistencia (conexión 1), con las terminales negativas a tierra (0). Así el osciloscopio muestra a la vez la señal que entra al diodo y la que sale de él.</span>
+              </div>
+            </li>
+            <li id="step-multisim-color-cable">
+              <div class="step-thumb has-img"><a href="images/multisim-cable-propiedades.png" target="_blank"><img src="images/multisim-cable-propiedades.png" alt="Menú del cable con la opción Properties"></a></div>
+              <div class="step-text">
+                <strong>Cambiar el color de los cables</strong>
+                <span>Para no confundirnos con las líneas del mismo color cuando corre el osciloscopio, se les cambia el color. Primero damos clic derecho sobre el cable y elegimos <strong>Properties</strong>.</span>
+              </div>
+            </li>
+            <li id="step-multisim-color-propiedades">
+              <div class="step-thumb has-img"><a href="images/multisim-color-net-properties.png" target="_blank"><img src="images/multisim-color-net-properties.png" alt="Ventana Net Properties con el campo Net color"></a></div>
+              <div class="step-text">
+                <strong>Net Properties</strong>
+                <span>Se abre la ventana <em>Net Properties</em>. Al dar clic en el cuadro rojo de <strong>Net color</strong> aparece la paleta de colores.</span>
+              </div>
+            </li>
+            <li id="step-multisim-color-paleta">
+              <div class="step-thumb has-img"><a href="images/multisim-paleta-colores.png" target="_blank"><img src="images/multisim-paleta-colores.png" alt="Paleta de colores con el amarillo seleccionado"></a></div>
+              <div class="step-text">
+                <strong>Escoger el color</strong>
+                <span>En la paleta se elige el color que se quiera; en este caso el profesor escogió el <strong>amarillo</strong> y damos clic en OK. La señal de ese cable se verá de ese color en el osciloscopio.</span>
               </div>
             </li>
 </ul>
