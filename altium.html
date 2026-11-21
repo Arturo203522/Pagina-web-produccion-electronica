@@ -45,25 +45,27 @@
 <div class="tool-page-header">
   <div class="kicker">Práctica 3</div>
   <h1>Proceso en Altium</h1>
-  <p>Diseño de una placa PCB en Altium Designer, desde el esquemático hasta la generación de los archivos de fabricación.</p>
+  <p>Diseño del esquemático y de la PCB de una consola portátil tipo Gameboy en Altium Designer.</p>
 </div>
 
 <div class="page-toc">
   <a href="#grp-instalacion-altium">Instalación de Altium</a>
+  <a href="#grp-altium-esquematico">Esquemático</a>
+  <a href="#grp-altium-pcb">Diseño de la PCB</a>
 </div>
 
 <div class="tool-page-body">
 
-<p class="stage-intro">Altium Designer es un software para el diseño de circuitos electrónicos y placas de circuito impreso (PCB). Permite capturar el esquemático, diseñar la placa y generar los archivos necesarios para su fabricación.</p>
+<p class="stage-intro">Altium Designer es un software para el diseño de circuitos electrónicos y placas de circuito impreso (PCB). Permite capturar el esquemático, acomodar los componentes y rutear la placa.</p>
 
 <div class="process-intro" style="margin-top:8px;">
   <h3>Proceso paso a paso</h3>
-  <p>Tercera práctica del semestre: el diseño de una PCB en Altium Designer.</p>
+  <p>En esta práctica, en equipo, diseñamos una consola portátil tipo Gameboy: un ESP32 como cerebro, botones para jugar, una pantalla y un sistema de alimentación con batería.</p>
 </div>
 
 <div class="ref-card" style="margin-bottom:30px;">
   <h4>Objetivo</h4>
-  <p style="margin:0; color:var(--ink-dim); font-size:15px;">Diseñar una PCB en Altium Designer, aplicando correctamente las etapas de captura de esquemático, diseño de la placa y generación de archivos de fabricación.</p>
+  <p style="margin:0; color:var(--ink-dim); font-size:15px;">Diseñar en Altium Designer el esquemático y la PCB de una consola portátil tipo Gameboy basada en un ESP32, aplicando las etapas de captura del esquemático, acomodo de componentes y ruteo de la placa.</p>
 </div>
 
 <h5 class="step-group-title" id="grp-instalacion-altium">Instalación de Altium</h5>
@@ -73,6 +75,54 @@
               <div class="step-text">
                 <strong>Instalar la aplicación</strong>
                 <span>Aquí va la explicación de este paso.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-altium-esquematico">Esquemático</h5>
+<ul class="step-list">
+            <li id="step-altium-esquematico-pantalla">
+              <div class="step-thumb has-img"><a href="images/altium-esquematico-pantalla.jpeg" target="_blank"><img src="images/altium-esquematico-pantalla.jpeg" alt="Esquemático en Altium con el ESP32, los botones, el sistema de alimentación y el módulo de pantalla DS1"></a></div>
+              <div class="step-text">
+                <strong>Esquemático con el módulo de pantalla</strong>
+                <span>En el esquemático el ESP32 (U1) está en el centro y los ocho botones (S2 a S9) se conectan a sus pines de entrada, todos con un lado a tierra (GND).</span>
+                <span>En la parte de arriba está la alimentación: un módulo cargador TP4056 con micro-USB (U2), el interruptor S1, un módulo elevador de voltaje MT3608 (U3) y un diodo 1N4007 (D1), que entregan los 5 V que llegan al ESP32.</span>
+                <span>A la derecha, el módulo de pantalla (DS1) se conecta al ESP32 con sus señales de comunicación (SCK, MISO, MOSI, CS, SDCS, D/C), el reset y la luz de fondo.</span>
+              </div>
+            </li>
+            <li id="step-altium-esquematico-conector">
+              <div class="step-thumb has-img"><a href="images/altium-esquematico-conector.jpeg" target="_blank"><img src="images/altium-esquematico-conector.jpeg" alt="Esquemático en Altium donde la pantalla se conecta mediante el conector J1 de 9 pines"></a></div>
+              <div class="step-text">
+                <strong>Esquemático con conector para la pantalla</strong>
+                <span>En esta otra versión del esquemático, la pantalla ya no aparece como módulo (DS1): en su lugar hay un conector de 9 pines (J1) con las señales de la pantalla (BL, CS, DC, RST, SDA, SCL, VCC y GND), conectadas a los pines del ESP32.</span>
+                <span>El resto del circuito, los botones y la alimentación, queda igual.</span>
+              </div>
+            </li>
+</ul>
+
+<h5 class="step-group-title" id="grp-altium-pcb">Diseño de la PCB</h5>
+<ul class="step-list">
+            <li id="step-altium-pcb-sin-rutear">
+              <div class="step-thumb has-img"><a href="images/altium-pcb-sin-rutear.jpeg" target="_blank"><img src="images/altium-pcb-sin-rutear.jpeg" alt="Editor de PCB de Altium con los componentes acomodados y las conexiones pendientes por rutear"></a></div>
+              <div class="step-text">
+                <strong>Acomodo de los componentes</strong>
+                <span>Al pasar el esquemático a la placa, los componentes aparecen con sus huellas y unas líneas delgadas que muestran las conexiones que todavía faltan por rutear.</span>
+                <span>Acomodamos los botones alrededor de la placa con sus nombres escritos junto a cada uno (Select, Start, A y B), el ESP32 al centro, la pantalla a la izquierda y la alimentación a la derecha.</span>
+              </div>
+            </li>
+            <li id="step-altium-pcb-ruteada">
+              <div class="step-thumb has-img"><a href="images/altium-pcb-ruteada.jpeg" target="_blank"><img src="images/altium-pcb-ruteada.jpeg" alt="PCB ruteada en Altium con pistas en rojo y azul, el conector J1 y un logotipo de control de videojuegos"></a></div>
+              <div class="step-text">
+                <strong>Ruteo de la placa</strong>
+                <span>Después ruteamos las pistas. En la imagen se ven en dos colores, rojo y azul, que corresponden a las dos caras de la placa.</span>
+                <span>En esta versión de la placa, la pantalla se conecta mediante el conector J1, y se agregó un logotipo de control de videojuegos como detalle de diseño.</span>
+              </div>
+            </li>
+            <li id="step-altium-pcb-3d">
+              <div class="step-thumb has-img"><a href="images/altium-pcb-3d.jpeg" target="_blank"><img src="images/altium-pcb-3d.jpeg" alt="Vista 3D de la PCB de la consola con el ESP32, los botones, el conector J1 y el logotipo"></a></div>
+              <div class="step-text">
+                <strong>Vista 3D de la placa</strong>
+                <span>Altium también permite ver la placa en 3D, con los modelos de los componentes sobre ella. Así se puede revisar cómo quedaría el diseño terminado antes de fabricarlo.</span>
               </div>
             </li>
 </ul>
